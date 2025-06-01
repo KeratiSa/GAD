@@ -1,0 +1,22 @@
+repeat task.wait() until game:IsLoaded()
+_G.Settings = {
+    ['Pet'] = {
+    'Dragonfly',
+    'Red Fox',
+    'Raccoon',
+    'Chicken Zombie',
+    'Blood Owl',
+    'Queen Bee'
+    },
+     ['Seed'] = {
+        'Sunflower'
+         },
+    ['Egg'] = {
+        'Bug Egg',
+        'Mythical Egg',
+        'Bee Egg'
+    }
+}
+_G.Key = 'Kerati'
+_G.Discord = '363593020811247618'
+getgenv().Loaders = loadstring(game:HttpGet("https://raw.githubusercontent.com/Achitsak/scripts/main/masterp_"))()
