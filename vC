@@ -1,0 +1,107 @@
+repeat wait() until game:IsLoaded()
+task.wait(10) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+getgenv().Configuration = {
+    SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
+        "Bamboo",
+        "Carrot",
+        "Orange Tulip",
+        "Watermelon",
+        "Pumpkin",
+        "Daffodil",
+        "Mushroom",
+        "Nightshade",
+        "Beanstalk",
+        "Cacao",
+        "Pepper",
+        "Grape",
+        "Mango",
+        "Dragon Fruit",
+        "Cactus",
+        "Coconut",
+        "Apple",
+        "Glowshroom",
+        "Mint",
+        "Moonflower",
+        "Starfruit",
+        "Moonglow",
+        "Moon Blossom",
+        "Moon Melon",
+        "Rose",
+        "Foxglove",
+        "Lilac",
+        "Pink Lily",
+        "Purple Dahlia"
+    },
+    EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
+        "Mythical Egg",
+        "Bug Egg",
+        "Night Egg",
+        "Uncommon Egg",
+        "Bee Egg",
+    },
+    PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
+        "Chicken",
+        "Rooster",
+        "Kiwi",
+        "Praying Mantis",
+        "Petal Bee",
+    },
+    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
+        "Rooster",
+        "Chicken",
+        "Kiwi",
+        "Praying Mantis",
+	    "Kiwi",
+	    "Echo Frog",
+    },
+    SELL_PET = {
+        -- กำหนดชื่อ pet ที่ต้องการขาย
+        "Dog",
+        "Golden Lab",
+        "Bunny",
+        "Black Bunny",
+        "Cat",
+        "Orange Tabby",
+        "Deer",
+        "Spotted Deer",
+        "Monkey",
+        "Silver Monkey",
+        "Pig",
+        "Turtle",
+        "Cow",
+        "Polar Bear",
+        "Panda",
+        "Sea Otter",
+        "Hedgehog",
+        "Mole",
+        "Frog",
+        "Grey Mouse",
+        "Brown Mouse",
+        "Red Giant Ant",
+        "Bee",
+        "Honey Bee",
+    },
+    BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
+        "",
+    },
+    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
+        "Bee Egg",
+        "Hive Fruit",
+        "Nectarine",
+        "Flower Seed Pack",
+    },
+
+    UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
+    UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
+
+    AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
+    AutoEvent = true, -- true/false เปิด ส่ง Event
+    OPEN_SEEDPACK = true, -- true/false เปิด Night Seed Pack
+    MoneyEnough = 50000000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1142855646396555424/cxsQLnHUXhsSB_DmPIp7rNfTBJVnwNTvoZ69MefrzzJqDXDEwFLjQbN0J_vu3TE-6hU8", -- Webhook ที่จะส่งไปที่ Discord
+    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Queen Bee"  },
+    COLLECT_MINUTES = 30, -- รอกี่นาทีให้เก็บผล ถ้าเป็นไอดีเริ่มต้นแนะนำให้ใส่ 0
+}
+script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
