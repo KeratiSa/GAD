@@ -85,10 +85,7 @@ getgenv().Configuration = {
         "",
     },
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
-        "Bee Egg",
-        "Hive Fruit",
-        "Nectarine",
-        "Flower Seed Pack",
+        "Bee Egg"
     },
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
