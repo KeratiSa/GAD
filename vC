@@ -93,6 +93,7 @@ getgenv().Configuration = {
 
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
     AutoEvent = true, -- true/false เปิด ส่ง Event
+    AutoFavEvent = true, -- true/false เปิด Auto Fav Event
     OPEN_SEEDPACK = true, -- true/false เปิด Night Seed Pack
     MoneyEnough = 50000000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
 
