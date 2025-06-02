@@ -68,6 +68,7 @@ getgenv().Configuration = {
         "",
     },
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
+	"Flower Seed Pack",
         "Bee Egg"
     },
 
