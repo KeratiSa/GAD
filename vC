@@ -25,6 +25,7 @@ getgenv().Configuration = {
         "Bug Egg",
         "Night Egg",
         "Uncommon Egg",
+	"Rare Egg",
         "Bee Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
