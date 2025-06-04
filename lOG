@@ -4,6 +4,8 @@ _G.Settings = {
     'Dragonfly',
     'Red Fox',
     'Raccoon',
+    'Bee',
+    'Honey Bee',
     'Queen Bee'
     },
      ['Seed'] = {
