@@ -1,5 +1,4 @@
 task.spawn(function()
-    task.wait(10) -- รอให้ทุกอย่างโหลดก่อน
     local loadedStart = false
     local loaded10m = false
     local loaded100m = false
