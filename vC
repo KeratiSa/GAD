@@ -63,8 +63,6 @@ getgenv().Configuration = {
         "Grey Mouse",
         "Brown Mouse",
         "Red Giant Ant",
-        "Bee",
-        "Honey Bee",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
