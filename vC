@@ -85,7 +85,7 @@ getgenv().Configuration = {
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1142855646396555424/cxsQLnHUXhsSB_DmPIp7rNfTBJVnwNTvoZ69MefrzzJqDXDEwFLjQbN0J_vu3TE-6hU8", -- Webhook ที่จะส่งไปที่ Discord
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Queen Bee"  },
-    COLLECT_MINUTES = 5, -- รอกี่นาทีให้เก็บผล ถ้าเป็นไอดีเริ่มต้นแนะนำให้ใส่ 0
+    COLLECT_MINUTES = 10, -- รอกี่นาทีให้เก็บผล ถ้าเป็นไอดีเริ่มต้นแนะนำให้ใส่ 0
 }
 script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
