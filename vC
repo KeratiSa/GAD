@@ -1,48 +1,61 @@
-repeat wait() until game:IsLoaded()
+repeat task.wait() until game:IsLoaded()
+
 task.spawn(function()
-    task.wait(10) -- รอให้ทุกอย่างโหลดก่อน
-    local loadedStart = false
-    local loaded10m = false
-    local loaded100m = false
+    task.wait(10) -- รอโหลดทุกอย่าง
+
+    local player = game:GetService("Players").LocalPlayer
+    local leaderstats = player:WaitForChild("leaderstats", 30)
+    local sheckles = leaderstats and leaderstats:WaitForChild("Sheckles", 30)
+    if not sheckles then
+        warn("ไม่พบ Sheckles")
+        return
+    end
+
+    local loadedStart, loaded10m, loaded100m = false, false, false
 
     while true do
-        local player = game:GetService("Players").LocalPlayer
-        local sheckles = player.leaderstats:WaitForChild("Sheckles").Value
+        local money = sheckles.Value
+        print("💰 Sheckles:", money)
 
-        print("Sheckles ปัจจุบัน:", sheckles)
-
-        if sheckles >= 100_000_000 then
-            if not loaded100m then
-                loaded100m = true
-                print("💸 เงินถึง 100 ล้าน → โหลดสคริปต์ 100m")
-                pcall(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/100m"))()
-                end)
+        if money >= 100_000_000 and not loaded100m then
+            loaded100m = true
+            print("💸 โหลดสคริปต์ 100m")
+            local ok, res = pcall(function()
+                return game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/100m")
+            end)
+            if ok then
+                loadstring(res)()
+            else
+                warn("โหลด 100m ล้มเหลว:", res)
             end
 
-        elseif sheckles >= 10_000_000 then
-            print("💸 เงินถึง 10 ล้าน — เตะออกเกมเพื่อไปรันตัว 10M")
+        elseif money >= 10_000_000 then
+            print("💸 เตะเพื่อไปรัน 10M ภายนอก")
             player:Kick("เงินถึง 10 ล้าน — ออกจากเกมเพื่อไปรันตัว 10M")
             break
 
-        elseif sheckles >= 1_000_000 then
-            if not loaded10m then
-                loaded10m = true
-                print("💸 เงินระหว่าง 1 - 10 ล้าน → โหลดสคริปต์ 10m")
-                pcall(function()
-                    local src = game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/10m")
-                    print("โหลดสำเร็จ (10m):", #src, "ตัวอักษร")
-                    loadstring(src)()
-                end)
+        elseif money >= 1_000_000 and not loaded10m then
+            loaded10m = true
+            print("💸 โหลดสคริปต์ 10m")
+            local ok, res = pcall(function()
+                return game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/10m")
+            end)
+            if ok then
+                loadstring(res)()
+            else
+                warn("โหลด 10m ล้มเหลว:", res)
             end
 
-        else
-            if not loadedStart then
-                loadedStart = true
-                print("💰 เงินน้อยกว่า 1 ล้าน → โหลดสคริปต์ Start")
-                pcall(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/Start"))()
-                end)
+        elseif money < 1_000_000 and not loadedStart then
+            loadedStart = true
+            print("💰 โหลดสคริปต์ Start")
+            local ok, res = pcall(function()
+                return game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/Start")
+            end)
+            if ok then
+                loadstring(res)()
+            else
+                warn("โหลด Start ล้มเหลว:", res)
             end
         end
 
