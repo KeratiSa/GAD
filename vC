@@ -1,5 +1,5 @@
-repeat wait() until game:IsLoaded()
 task.spawn(function()
+    task.wait(10) -- รอให้ทุกอย่างโหลดก่อน
     local loadedStart = false
     local loaded10m = false
     local loaded100m = false
@@ -8,33 +8,37 @@ task.spawn(function()
         local player = game:GetService("Players").LocalPlayer
         local sheckles = player.leaderstats:WaitForChild("Sheckles").Value
 
+        print("Sheckles ปัจจุบัน:", sheckles)
+
         if sheckles >= 100_000_000 then
             if not loaded100m then
                 loaded100m = true
-                print("เงินถึง 100 ล้าน → โหลดสคริปต์ 100m")
+                print("💸 เงินถึง 100 ล้าน → โหลดสคริปต์ 100m")
                 pcall(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/100m"))()
                 end)
             end
 
         elseif sheckles >= 10_000_000 then
-            print("เงินถึง 10 ล้าน — เตะออกเกมเพื่อไปรัน 10m ภายนอก")
+            print("💸 เงินถึง 10 ล้าน — เตะออกเกมเพื่อไปรันตัว 10M")
             player:Kick("เงินถึง 10 ล้าน — ออกจากเกมเพื่อไปรันตัว 10M")
             break
 
         elseif sheckles >= 1_000_000 then
             if not loaded10m then
                 loaded10m = true
-                print("เงินระหว่าง 1 - 10 ล้าน → โหลดสคริปต์ 10m")
+                print("💸 เงินระหว่าง 1 - 10 ล้าน → โหลดสคริปต์ 10m")
                 pcall(function()
-                    loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/10m"))()
+                    local src = game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/10m")
+                    print("โหลดสำเร็จ (10m):", #src, "ตัวอักษร")
+                    loadstring(src)()
                 end)
             end
 
-        else -- เงินน้อยกว่า 1 ล้าน
+        else
             if not loadedStart then
                 loadedStart = true
-                print("เงินน้อยกว่า 1 ล้าน → โหลดสคริปต์ Start")
+                print("💰 เงินน้อยกว่า 1 ล้าน → โหลดสคริปต์ Start")
                 pcall(function()
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/Start"))()
                 end)
