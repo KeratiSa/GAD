@@ -69,7 +69,7 @@ getgenv().Configuration = {
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
-    SELL_PET_MIN_COUNT = 30, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_MIN_COUNT = 15, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 10, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pe
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
 	"Flower Seed Pack",
