@@ -44,10 +44,7 @@ getgenv().Configuration = {
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Chicken",
         "Rooster",
-        "Dragonfly",
         "Kiwi",
-        "Raccoon",
-        "Red Fox",
         "Praying Mantis",
         "Petal Bee",
     },
