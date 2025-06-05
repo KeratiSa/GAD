@@ -73,7 +73,7 @@ getgenv().Configuration = {
 	"Flower Seed Pack",
         "Bee Egg",
     },
-
+    MaxCropInFarm = 450, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
 
