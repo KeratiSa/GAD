@@ -1,21 +1,31 @@
 repeat task.wait() until game:IsLoaded()
-_G.Settings = {
+_G.SettingsMasterp = {
     ['Pet'] = {
-    'Dragonfly',
-    'Red Fox',
-    'Raccoon',
-    'Bee',
-    'Honey Bee',
-    'Queen Bee'
+        'Raccoon',
+        'Red Fox',
+        'Night Owl',
+        'Blood Kiwi',
+        'Dragonfly',
+        'Bee',
+        'Honey Bee',
+        'Queen Bee'
     },
-     ['Seed'] = {
-        'Sunflower'
-         },
     ['Egg'] = {
         'Bug Egg',
         'Mythical Egg',
-        'Bee Egg'
-    }
+        'Legendary Egg'
+    },
+    ['Seed'] = {
+        'Moon Blossom',
+        'Sunflower'
+    },
+    ['Holdable'] = {
+        'Candy Blossom'
+    },
+    ['Sprinkler'] = {
+        'Master Sprinkler'
+    } 
+    -- u can add more item list
 }
 _G.Key = 'Kerati'
 _G.Discord = '363593020811247618'
