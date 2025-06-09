@@ -76,7 +76,9 @@ getgenv().Configuration = {
     MaxCropInFarm = 450, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
-
+    OpenEgg = false, -- true/false เปิด Auto Open Egg
+    PlaceEgg = true, -- true/false เปิด Auto Place Egg
+    BuyEgg = true, -- true/false เปิด Auto Buy Egg
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
     AutoEvent = true, -- true/false เปิด ส่ง Event
     AutoFavEvent = true, -- true/false เปิด Auto Fav Event
