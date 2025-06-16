@@ -7,18 +7,9 @@ getgenv().Configuration = {
         "Watermelon",
         "Pumpkin",
         "Mushroom",
-        "Beanstalk",
-        "Cacao",
-        "Pepper",
-        "Grape",
-        "Mango",    
-        "Dragon Fruit",
-        "Coconut",
-        "Rose",
-        "Foxglove",
+        "Beanstalk",   
         "Lilac",
-        "Pink Lily",
-        "Purple Dahlia",
+        "Sugar Apple",
         "Ember Lily",
         "Crocus",
         "Succulent",
@@ -28,6 +19,9 @@ getgenv().Configuration = {
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
+        "Mythical Egg",
+        "Uncommon Egg",
+        "Rare Egg",
         "Bee Egg",
         "Anti Bee Egg",
     },
@@ -36,8 +30,6 @@ getgenv().Configuration = {
         "Honey Bee",
         "Kiwi",
         "Blood Kiwi",
-        "Wasp",
-        "Tarantula Hawk",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Rooster",
@@ -68,20 +60,25 @@ getgenv().Configuration = {
         "Grey Mouse",
         "Brown Mouse",
         "Red Giant Ant",
+        "Bee",
+        "Honey Bee",
         "Chicken",
         "Rooster",
         "Kiwi",
+        "Wasp",
+        "Tarantula Hawk",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
         "Bee Egg",
+        "Flower Seed Pack",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Crafters Seed Pack", Amount = 2},
-    { Name = "Anti Bee Egg", Amount = 3 },
+    { Name = "Crafters Seed Pack", Amount = 100 },
+    { Name = "Anti Bee Egg", Amount = 5 },
     },
 
 
@@ -92,7 +89,7 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 150, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 200, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
@@ -107,7 +104,7 @@ getgenv().Configuration = {
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Praying Mantis", "Queen Bee" },
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 1000000, Minutes = 20 },
+        { Money = 1000000, Minutes = 10 },
         { Money = 0, Minutes = 1 },
     },
 }
