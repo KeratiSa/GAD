@@ -36,6 +36,8 @@ getgenv().Configuration = {
         "Honey Bee",
         "Kiwi",
         "Blood Kiwi",
+        "Wasp",
+        "Tarantula Hawk",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Rooster",
@@ -69,8 +71,6 @@ getgenv().Configuration = {
         "Chicken",
         "Rooster",
         "Kiwi",
-        "Wasp",
-        "Tarantula Hawk",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
