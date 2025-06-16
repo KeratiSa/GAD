@@ -77,7 +77,7 @@ getgenv().Configuration = {
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Crafters Seed Pack", Amount = 100 },
+    { Name = "Crafters Seed Pack", Amount = 2 },
     { Name = "Anti Bee Egg", Amount = 5 },
     },
 
@@ -104,7 +104,7 @@ getgenv().Configuration = {
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Praying Mantis", "Queen Bee" },
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 1000000, Minutes = 10 },
+        { Money = 1000000, Minutes = 15 },
         { Money = 0, Minutes = 1 },
     },
 }
