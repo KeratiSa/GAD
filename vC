@@ -19,6 +19,7 @@ getgenv().Configuration = {
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
+        "Mythical Egg",
         "Anti Bee Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
