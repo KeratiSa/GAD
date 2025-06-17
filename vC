@@ -72,8 +72,9 @@ getgenv().Configuration = {
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
-    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
-        "Bee Egg",
+    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Event Shop
+         {"Flower Seed Pack", Amount = 2},
+         {"Bee Egg", Amount = 10},
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
