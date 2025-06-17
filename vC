@@ -74,7 +74,6 @@ getgenv().Configuration = {
     },
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
         "Bee Egg",
-        "Flower Seed Pack",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
