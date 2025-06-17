@@ -102,10 +102,10 @@ getgenv().Configuration = {
     MoneyEnough = 100000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1142855646396555424/cxsQLnHUXhsSB_DmPIp7rNfTBJVnwNTvoZ69MefrzzJqDXDEwFLjQbN0J_vu3TE-6hU8",     
-    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Praying Mantis", "Queen Bee" },
+    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee" },
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 1000000, Minutes = 15 },
+        { Money = 1000000, Minutes = 20 },
         { Money = 0, Minutes = 1 },
     },
 }
