@@ -105,7 +105,7 @@ getgenv().Configuration = {
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee" },
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 1000000, Minutes = 25 },
+        { Money = 1000000, Minutes = 20 },
         { Money = 0, Minutes = 1 },
     },
 }
