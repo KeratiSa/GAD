@@ -7,9 +7,18 @@ getgenv().Configuration = {
         "Watermelon",
         "Pumpkin",
         "Mushroom",
+        "Grape",
+        "Foxglove",
         "Lilac",
-        "Sugar Apple",
+        "Pink Lily",
+        "Purple Dahlia",
         "Ember Lily",
+        "Crocus",
+        "Succulent",
+        "Violet Corn",
+        "Bendboo",
+        "Cocovine",
+        "Sugar Apple",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
@@ -84,7 +93,7 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 100, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 120, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
