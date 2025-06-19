@@ -7,7 +7,6 @@ getgenv().Configuration = {
         "Watermelon",
         "Pumpkin",
         "Mushroom",
-        "Beanstalk",   
         "Lilac",
         "Sugar Apple",
         "Ember Lily",
@@ -69,7 +68,7 @@ getgenv().Configuration = {
     },
     EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Event Shop
          {"Flower Seed Pack", Amount = 3},
-         {"Bee Egg", Amount = 5},
+         {"Bee Egg", Amount = 500},
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
