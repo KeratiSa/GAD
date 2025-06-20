@@ -1,39 +1,28 @@
 repeat wait() until game:IsLoaded()
-task.wait(15) -- ระยะเวลารอ ถ้าเปิดหลายจอแนะนำตั้ง 20 วิ
-
--- ตั้งค่า Config ไว้ที่ getgenv().Config ให้ครบทุกอย่างและสอดคล้องกัน
-getgenv().Config = {
+task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Bamboo",
         "Carrot",
         "Watermelon",
         "Pumpkin",
         "Mushroom",
-        "Grape",
-        "Foxglove",
         "Lilac",
-        "Pink Lily",
-        "Purple Dahlia",
-        "Ember Lily",
-        "Crocus",
-        "Succulent",
-        "Violet Corn",
-        "Bendboo",
-        "Cocovine",
         "Sugar Apple",
+        "Ember Lily",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
         "Mythical Egg",
         "Anti Bee Egg",
     },
-    PET_NAME = { -- กำหนดชื่อ pet ที่ต้องการนำใส่ฟาร์ม
+    PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Bee",
         "Honey Bee",
         "Wasp",
         "Tarantula Hawk",
     },
-    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ใช้ในการ Upgrade
+    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
         "Honey Bee",
         "Chicken",
@@ -42,7 +31,8 @@ getgenv().Config = {
         "Wasp",
         "Tarantula Hawk",
     },
-    SELL_PET = { -- กำหนดชื่อ pet ที่ต้องการขาย
+    SELL_PET = {
+        -- กำหนดชื่อ pet ที่ต้องการขาย
         "Dog",
         "Golden Lab",
         "Bunny",
@@ -76,14 +66,16 @@ getgenv().Config = {
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
-    EVENTSHOP = { -- กำหนด Item ที่ต้องการซื้อจาก Event Shop
+    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Event Shop
          "Flower Seed Pack",
          "Bee Egg",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-        { Name = "Anti Bee Egg", Amount = 500 },
+    { Name = "Crafters Seed Pack", Amount = 200 },
+    { Name = "Anti Bee Egg", Amount = 500 },
     },
+
 
     SELL_PET_MIN_COUNT = 4, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
@@ -92,7 +84,7 @@ getgenv().Config = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 120, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 100, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
@@ -111,5 +103,6 @@ getgenv().Config = {
         { Money = 0, Minutes = 1 },
     },
 }
+
 script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
