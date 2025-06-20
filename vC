@@ -1,6 +1,8 @@
 repeat wait() until game:IsLoaded()
-task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
-getgenv().Configuration = {
+task.wait(15) -- ระยะเวลารอ ถ้าเปิดหลายจอแนะนำตั้ง 20 วิ
+
+-- ตั้งค่า Config ไว้ที่ getgenv().Config ให้ครบทุกอย่างและสอดคล้องกัน
+getgenv().Config = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Bamboo",
         "Carrot",
@@ -25,13 +27,13 @@ getgenv().Configuration = {
         "Mythical Egg",
         "Anti Bee Egg",
     },
-    PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
+    PET_NAME = { -- กำหนดชื่อ pet ที่ต้องการนำใส่ฟาร์ม
         "Bee",
         "Honey Bee",
         "Wasp",
         "Tarantula Hawk",
     },
-    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
+    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ใช้ในการ Upgrade
         "Bee",
         "Honey Bee",
         "Chicken",
@@ -40,8 +42,7 @@ getgenv().Configuration = {
         "Wasp",
         "Tarantula Hawk",
     },
-    SELL_PET = {
-        -- กำหนดชื่อ pet ที่ต้องการขาย
+    SELL_PET = { -- กำหนดชื่อ pet ที่ต้องการขาย
         "Dog",
         "Golden Lab",
         "Bunny",
@@ -75,15 +76,14 @@ getgenv().Configuration = {
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
-    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Event Shop
+    EVENTSHOP = { -- กำหนด Item ที่ต้องการซื้อจาก Event Shop
          "Flower Seed Pack",
          "Bee Egg",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Anti Bee Egg", Amount = 500 },
+        { Name = "Anti Bee Egg", Amount = 500 },
     },
-
 
     SELL_PET_MIN_COUNT = 4, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
@@ -110,15 +110,33 @@ getgenv().Configuration = {
         { Money = 1000000, Minutes = 15 },
         { Money = 0, Minutes = 1 },
     },
+
+    -- เพิ่มเติมที่จำเป็นสำหรับฟังก์ชันอื่น
+    ["Auto Hatch Egg"] = {
+        Enabled = true, -- เปิด/ปิด Auto Hatch Egg
+    },
+    ["Enable Screen Black"] = false, -- เปิด/ปิด ฟังก์ชัน Screen Black
+    ["Screen Black FPS Cap"] = 30, -- FPS Cap ตอน Screen Black
 }
 
-script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
+local script_key = "poXxwoOXifupROYeAcYexuXPvbrLtdYv"
 
-task.delay(6,function()
-    loadstring(game:HttpGet(
-        "https://raw.githubusercontent.com/DonkiRoblox111/config/refs/heads/main/Alr"
-    ))()
+-- โหลดสคริปต์หลัก
+local success, err = pcall(function()
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
+end)
+if not success then
+    warn("[Loader] Load main script failed:", err)
+end
+
+-- โหลดสคริปต์เสริมอีกทีหลัง delay 6 วิ
+task.delay(6, function()
+    local ok, e = pcall(function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DonkiRoblox111/config/refs/heads/main/Alr"))()
+    end)
+    if not ok then
+        warn("[Loader] Load secondary script failed:", e)
+    end
 end)
 
 local Player = game:GetService("Players").LocalPlayer
@@ -142,29 +160,32 @@ task.spawn(function()
     local DataService = require(game:GetService("ReplicatedStorage").Modules.DataService)
     if typeof(DataService.GetData) == "function" then
         local old = DataService.GetData
-        DataService.GetData = function(self,...)
-            local data = old(self,...)
+        DataService.GetData = function(self, ...)
+            local data = old(self, ...)
             cachedPlayerData = data
             return data
         end
     end
 end)
 
+-- ฟังก์ชันซื้อไอเทมใน Event Shop อัตโนมัติ
 spawn(function()
     wait(5)
-    local shop = getgenv().Configuration.EVENTSHOP or {}
+    local shop = getgenv().Config.EVENTSHOP or {}
 
     local function buyEventShopItems()
         local data = cachedPlayerData
         if not data or not data.EventShopStock or not data.EventShopStock.Stocks then return end
 
         local remote = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):FindFirstChild("BuyEventShopStock")
+        if not remote then return end
 
         for _, itemName in ipairs(shop) do
             local stock = data.EventShopStock.Stocks[itemName]
             if stock and stock.Stock > 0 then
                 pcall(function()
                     remote:FireServer(itemName)
+                    print("[EventShop] Bought:", itemName)
                 end)
                 task.wait()
             end
@@ -176,30 +197,40 @@ spawn(function()
     end
 end)
 
+-- ฟังก์ชัน Auto Hatch Egg
 spawn(function()
-    if not (farm and getgenv().Config["Auto Hatch Egg"].Enabled) then return end
+    if not (farm and getgenv().Config["Auto Hatch Egg"] and getgenv().Config["Auto Hatch Egg"].Enabled) then 
+        print("[Auto Hatch Egg] Disabled or farm not found")
+        return 
+    end
+    print("[Auto Hatch Egg] Started")
     while task.wait(5) do
         pcall(function()
-            for _,egg in ipairs(farm:WaitForChild("Important").Objects_Physical:GetChildren()) do
-                if egg.Name~="PetEgg" then continue end
-                if egg:GetAttribute("TimeToHatch")==0 then
+            for _, egg in ipairs(farm:WaitForChild("Important").Objects_Physical:GetChildren()) do
+                if egg.Name ~= "PetEgg" then continue end
+                if egg:GetAttribute("TimeToHatch") == 0 then
                     game:GetService("ReplicatedStorage"):WaitForChild("GameEvents")
-                        :WaitForChild("PetEggService"):FireServer("HatchPet",egg)
+                        :WaitForChild("PetEggService"):FireServer("HatchPet", egg)
+                    print("[Auto Hatch Egg] Hatch Pet Egg:", egg)
                 end
             end
         end)
     end
 end)
 
+-- ฟังก์ชันจัดการ Screen Black และ FPS Cap
 task.spawn(function()
     repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
     if not getgenv().Config["Enable Screen Black"] then
-        task.delay(6,function()
+        task.delay(6, function()
             pcall(function()
-                local fpsCap=getgenv().Config["Screen Black FPS Cap"] or 30
-                if typeof(setfpscap)=="function" then setfpscap(fpsCap) end
-                for _,gui in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-                    if gui:IsA("ScreenGui") and gui.Name:lower():find("black") then gui:Destroy() end
+                local fpsCap = getgenv().Config["Screen Black FPS Cap"] or 30
+                if typeof(setfpscap) == "function" then setfpscap(fpsCap) end
+                for _, gui in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+                    if gui:IsA("ScreenGui") and gui.Name:lower():find("black") then
+                        gui:Destroy()
+                        print("[Screen Black] Removed black GUI:", gui.Name)
+                    end
                 end
             end)
         end)
