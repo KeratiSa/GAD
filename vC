@@ -168,60 +168,6 @@ spawn(function()
     end
     while task.wait(5) do pcall(buyEventShopItems) end
 end)
-
-spawn(function()
-    if not (farm and getgenv().Config["Auto Place Pet Egg"].Enabled) then return end
-    wait(5)
-    local placeEgg = {}
-    local base = farm:WaitForChild("Important").Plant_Locations.Can_Plant.Position
-    for _,z in ipairs({-15,-19}) do
-        for i = (z==-15 and -2 or -1),(z==-15 and 2 or 1) do
-            table.insert(placeEgg,{Used=false,Position=Vector3.new(base.X+i*4,base.Y,base.Z+z)})
-        end
-    end
-    while task.wait(5) do
-        pcall(function()
-            local data = cachedPlayerData; if not data or not data.InventoryData then return end
-            local petEggs={}
-            for id,item in pairs(data.InventoryData) do
-                if item.ItemType=="PetEgg" then
-                    table.insert(petEggs,{id=id,name=item.ItemData and item.ItemData.EggName or"Unknown",
-                        uses=item.ItemData and item.ItemData.Uses or 0})
-                end
-            end
-            if #petEggs==0 then return end
-            for _,e in ipairs(placeEgg) do e.Used=false end
-            local eggPlaced=0
-            for _,egg in ipairs(farm:WaitForChild("Important").Objects_Physical:GetChildren()) do
-                if egg.Name~="PetEgg" then continue end
-                eggPlaced+=1
-                local pos=egg.PetEgg.Position
-                for _,entry in ipairs(placeEgg) do
-                    if not entry.Used and math.abs(entry.Position.X-pos.X)<=1 and math.abs(entry.Position.Z-pos.Z)<=1 then
-                        entry.Used=true; break
-                    end
-                end
-            end
-            local maxEggs=data.PetsData.MutableStats.MaxEggsInFarm
-            if eggPlaced>=maxEggs then return end
-            for _,egg in ipairs(petEggs) do
-                pcall(function()
-                    Player.Character.Humanoid:EquipTool(Player.Backpack[egg.name.." x"..egg.uses])
-                end)
-                task.wait(2)
-                for _=1,egg.uses do
-                    local target=nil
-                    for _,entry in ipairs(placeEgg) do if not entry.Used then target=entry break end end
-                    if not target then return end
-                    game:GetService("ReplicatedStorage").GameEvents.PetEggService:FireServer("CreateEgg",target.Position)
-                    target.Used=true; eggPlaced+=1; task.wait(1)
-                    if eggPlaced>=maxEggs then return end
-                end
-            end
-        end)
-    end
-end)
-
 spawn(function()
     if not (farm and getgenv().Config["Auto Hatch Egg"].Enabled) then return end
     while task.wait(5) do
