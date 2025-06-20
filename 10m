@@ -1,3 +1,4 @@
+wait(10)
 local cachedPlayerData = nil
 
 spawn(function()
