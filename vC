@@ -114,6 +114,7 @@ getgenv().Configuration = {
 
 script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
+
 task.delay(6,function()
     loadstring(game:HttpGet(
         "https://raw.githubusercontent.com/DonkiRoblox111/config/refs/heads/main/Alr"
@@ -151,23 +152,30 @@ end)
 
 spawn(function()
     wait(5)
-    local shop = getgenv().Config["Buy Honey Shop"]
+    local shop = getgenv().Configuration.EVENTSHOP or {}
+
     local function buyEventShopItems()
         local data = cachedPlayerData
         if not data or not data.EventShopStock or not data.EventShopStock.Stocks then return end
+
         local remote = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):FindFirstChild("BuyEventShopStock")
-        for itemName,enabled in pairs(shop) do
-            if enabled then
-                local stock = data.EventShopStock.Stocks[itemName]
-                if stock and stock.Stock>0 then
-                    pcall(function() remote:FireServer(itemName) end)
-                    task.wait()
-                end
+
+        for _, itemName in ipairs(shop) do
+            local stock = data.EventShopStock.Stocks[itemName]
+            if stock and stock.Stock > 0 then
+                pcall(function()
+                    remote:FireServer(itemName)
+                end)
+                task.wait()
             end
         end
     end
-    while task.wait(5) do pcall(buyEventShopItems) end
+
+    while task.wait(5) do
+        pcall(buyEventShopItems)
+    end
 end)
+
 spawn(function()
     if not (farm and getgenv().Config["Auto Hatch Egg"].Enabled) then return end
     while task.wait(5) do
