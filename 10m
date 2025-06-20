@@ -16,7 +16,7 @@ spawn(function()
     title.TextXAlignment = Enum.TextXAlignment.Left
     title.Font = Enum.Font.Code
     title.TextSize = 18
-    title.Text = "Binini Hub Cat Hub W Config Farm Fruit"
+    title.Text = "Kerati GAD HIHTSPEED"
 
     local fpsLabel = Instance.new("TextLabel", screenGui)
     fpsLabel.Size = UDim2.new(0, 250, 0, 25)
