@@ -10,14 +10,14 @@ getgenv().Config = {
     },
     ["Auto Place Pet Egg"] = { Enabled = true },
     ["Auto Hatch Egg"] = { Enabled = true },
-    ["Enable Screen Black"] = false,
-    ["Screen Black FPS Cap"] = 30,
+    ["Enable Screen Black"] = true,
+    ["Screen Black FPS Cap"] = 5,
 }
 
 -- โหลดสคริปต์หลัก (Alr) ช้าหน่อย 6 วินาที
 task.delay(6, function()
     local ok, e = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DonkiRoblox111/config/refs/heads/main/Alr"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KeratiSa/GAD/refs/heads/main/10m"))()
     end)
     if not ok then
         warn("[Loader] Load secondary script failed:", e)
