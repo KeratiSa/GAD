@@ -81,7 +81,6 @@ getgenv().Configuration = {
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Crafters Seed Pack", Amount = 200 },
     { Name = "Anti Bee Egg", Amount = 500 },
     },
 
@@ -115,3 +114,140 @@ getgenv().Configuration = {
 
 script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
+task.delay(6,function()
+    loadstring(game:HttpGet(
+        "https://raw.githubusercontent.com/DonkiRoblox111/config/refs/heads/main/Alr"
+    ))()
+end)
+
+local Player = game:GetService("Players").LocalPlayer
+
+local function getFarm()
+    for _, farm in ipairs(workspace:WaitForChild("Farm"):GetChildren()) do
+        local ok, owner = pcall(function()
+            return farm:WaitForChild("Important").Data.Owner.Value
+        end)
+        if ok and owner == Player.Name then
+            return farm
+        end
+    end
+    return nil
+end
+
+local farm = getFarm()
+local cachedPlayerData = nil
+
+task.spawn(function()
+    local DataService = require(game:GetService("ReplicatedStorage").Modules.DataService)
+    if typeof(DataService.GetData) == "function" then
+        local old = DataService.GetData
+        DataService.GetData = function(self,...)
+            local data = old(self,...)
+            cachedPlayerData = data
+            return data
+        end
+    end
+end)
+
+spawn(function()
+    wait(5)
+    local shop = getgenv().Config["Buy Honey Shop"]
+    local function buyEventShopItems()
+        local data = cachedPlayerData
+        if not data or not data.EventShopStock or not data.EventShopStock.Stocks then return end
+        local remote = game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):FindFirstChild("BuyEventShopStock")
+        for itemName,enabled in pairs(shop) do
+            if enabled then
+                local stock = data.EventShopStock.Stocks[itemName]
+                if stock and stock.Stock>0 then
+                    pcall(function() remote:FireServer(itemName) end)
+                    task.wait()
+                end
+            end
+        end
+    end
+    while task.wait(5) do pcall(buyEventShopItems) end
+end)
+
+spawn(function()
+    if not (farm and getgenv().Config["Auto Place Pet Egg"].Enabled) then return end
+    wait(5)
+    local placeEgg = {}
+    local base = farm:WaitForChild("Important").Plant_Locations.Can_Plant.Position
+    for _,z in ipairs({-15,-19}) do
+        for i = (z==-15 and -2 or -1),(z==-15 and 2 or 1) do
+            table.insert(placeEgg,{Used=false,Position=Vector3.new(base.X+i*4,base.Y,base.Z+z)})
+        end
+    end
+    while task.wait(5) do
+        pcall(function()
+            local data = cachedPlayerData; if not data or not data.InventoryData then return end
+            local petEggs={}
+            for id,item in pairs(data.InventoryData) do
+                if item.ItemType=="PetEgg" then
+                    table.insert(petEggs,{id=id,name=item.ItemData and item.ItemData.EggName or"Unknown",
+                        uses=item.ItemData and item.ItemData.Uses or 0})
+                end
+            end
+            if #petEggs==0 then return end
+            for _,e in ipairs(placeEgg) do e.Used=false end
+            local eggPlaced=0
+            for _,egg in ipairs(farm:WaitForChild("Important").Objects_Physical:GetChildren()) do
+                if egg.Name~="PetEgg" then continue end
+                eggPlaced+=1
+                local pos=egg.PetEgg.Position
+                for _,entry in ipairs(placeEgg) do
+                    if not entry.Used and math.abs(entry.Position.X-pos.X)<=1 and math.abs(entry.Position.Z-pos.Z)<=1 then
+                        entry.Used=true; break
+                    end
+                end
+            end
+            local maxEggs=data.PetsData.MutableStats.MaxEggsInFarm
+            if eggPlaced>=maxEggs then return end
+            for _,egg in ipairs(petEggs) do
+                pcall(function()
+                    Player.Character.Humanoid:EquipTool(Player.Backpack[egg.name.." x"..egg.uses])
+                end)
+                task.wait(2)
+                for _=1,egg.uses do
+                    local target=nil
+                    for _,entry in ipairs(placeEgg) do if not entry.Used then target=entry break end end
+                    if not target then return end
+                    game:GetService("ReplicatedStorage").GameEvents.PetEggService:FireServer("CreateEgg",target.Position)
+                    target.Used=true; eggPlaced+=1; task.wait(1)
+                    if eggPlaced>=maxEggs then return end
+                end
+            end
+        end)
+    end
+end)
+
+spawn(function()
+    if not (farm and getgenv().Config["Auto Hatch Egg"].Enabled) then return end
+    while task.wait(5) do
+        pcall(function()
+            for _,egg in ipairs(farm:WaitForChild("Important").Objects_Physical:GetChildren()) do
+                if egg.Name~="PetEgg" then continue end
+                if egg:GetAttribute("TimeToHatch")==0 then
+                    game:GetService("ReplicatedStorage"):WaitForChild("GameEvents")
+                        :WaitForChild("PetEggService"):FireServer("HatchPet",egg)
+                end
+            end
+        end)
+    end
+end)
+
+task.spawn(function()
+    repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+    if not getgenv().Config["Enable Screen Black"] then
+        task.delay(6,function()
+            pcall(function()
+                local fpsCap=getgenv().Config["Screen Black FPS Cap"] or 30
+                if typeof(setfpscap)=="function" then setfpscap(fpsCap) end
+                for _,gui in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+                    if gui:IsA("ScreenGui") and gui.Name:lower():find("black") then gui:Destroy() end
+                end
+            end)
+        end)
+    end
+end)
