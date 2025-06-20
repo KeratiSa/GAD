@@ -1,107 +1,286 @@
-repeat wait() until game:IsLoaded()
-task.wait(10) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
-getgenv().Configuration = {
-    SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Bamboo",
-        "Carrot",
-        "Orange Tulip",
-        "Watermelon",
-        "Pumpkin",
-        "Daffodil",
-        "Mushroom",
-        "Nightshade",
-        "Beanstalk",
-        "Cacao",
-        "Pepper",
-        "Grape",
-        "Mango",
-        "Dragon Fruit",
-        "Cactus",
-        "Coconut",
-        "Apple",
-        "Glowshroom",
-        "Mint",
-        "Moonflower",
-        "Starfruit",
-        "Moonglow",
-        "Moon Blossom",
-        "Moon Melon",
-        "Rose",
-        "Foxglove",
-        "Lilac",
-        "Pink Lily",
-        "Purple Dahlia",
-        "Sunflower",
-    },
-    EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
-        "Legendary Egg",
-        "Mythical Egg",
-        "Bug Egg",
-        "Night Egg",
-        "Uncommon Egg",
-        "Bee Egg",
-    },
-    PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
-        "Chicken",
-        "Rooster",
-        "Kiwi",
-        "Praying Mantis",
-        "Petal Bee",
-    },
-    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
-        "Rooster",
-        "Chicken",
-        "Kiwi",
-    },
-    SELL_PET = {
-        -- กำหนดชื่อ pet ที่ต้องการขาย
-        "Dog",
-        "Golden Lab",
-        "Bunny",
-        "Black Bunny",
-        "Cat",
-        "Orange Tabby",
-        "Deer",
-        "Spotted Deer",
-        "Monkey",
-        "Silver Monkey",
-        "Pig",
-        "Turtle",
-        "Cow",
-        "Polar Bear",
-        "Panda",
-        "Sea Otter",
-        "Hedgehog",
-        "Mole",
-        "Frog",
-        "Grey Mouse",
-        "Brown Mouse",
-        "Red Giant Ant",
-        "Bee",
-        "Honey Bee",
-    },
-    BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
-        "",
-    },
-    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Bloodmoon Shop
-        "Bee Egg",
-        "Hive Fruit",
-        "Nectarine",
-        "Flower Seed Pack",
-    },
+local cachedPlayerData = nil
 
-    UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
-    UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
+spawn(function()
+    wait(5)
+    local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    local screenGui = Instance.new("ScreenGui", playerGui)
+    screenGui.Name = "FPSDisplay"
+    screenGui.ResetOnSpawn = false
 
-    AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
-    AutoEvent = true, -- true/false เปิด ส่ง Event
-    OPEN_SEEDPACK = true, -- true/false เปิด Night Seed Pack
-    MoneyEnough = 1500000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+    local title = Instance.new("TextLabel", screenGui)
+    title.Size = UDim2.new(0, 250, 0, 25)
+    title.Position = UDim2.new(0, 10, 0, 10)
+    title.BackgroundTransparency = 1
+    title.TextColor3 = Color3.fromRGB(255, 255, 0)
+    title.TextStrokeTransparency = 0.5
+    title.TextXAlignment = Enum.TextXAlignment.Left
+    title.Font = Enum.Font.Code
+    title.TextSize = 18
+    title.Text = "Binini Hub Cat Hub W Config Farm Fruit"
 
-    WEBHOOK_URL = "", -- Webhook ที่จะส่งไปที่ Discord
-    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Praying Mantis", "Queen Bee"},
+    local fpsLabel = Instance.new("TextLabel", screenGui)
+    fpsLabel.Size = UDim2.new(0, 250, 0, 25)
+    fpsLabel.Position = UDim2.new(0, 10, 0, 35)
+    fpsLabel.BackgroundTransparency = 1
+    fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    fpsLabel.TextXAlignment = Enum.TextXAlignment.Left
+    fpsLabel.Font = Enum.Font.Code
+    fpsLabel.TextSize = 16
+    fpsLabel.Text = "FPS: ..."
 
-    COLLECT_MINUTES = 5, -- รอกี่นาทีให้เก็บผล ถ้าเป็นไอดีเริ่มต้นแนะนำให้ใส่ 0
-}
-script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
+    local timeLabel = Instance.new("TextLabel", screenGui)
+    timeLabel.Size = UDim2.new(0, 250, 0, 25)
+    timeLabel.Position = UDim2.new(0, 10, 0, 60)
+    timeLabel.BackgroundTransparency = 1
+    timeLabel.TextColor3 = Color3.fromRGB(0, 170, 255)
+    timeLabel.TextXAlignment = Enum.TextXAlignment.Left
+    timeLabel.Font = Enum.Font.Code
+    timeLabel.TextSize = 16
+    timeLabel.Text = "Time: 00:00:00"
+
+    local actionLabel = Instance.new("TextLabel", screenGui)
+    actionLabel.Size = UDim2.new(0, 350, 0, 25)
+    actionLabel.Position = UDim2.new(0, 10, 0, 85)
+    actionLabel.BackgroundTransparency = 1
+    actionLabel.TextColor3 = Color3.fromRGB(255, 150, 0)
+    actionLabel.TextXAlignment = Enum.TextXAlignment.Left
+    actionLabel.Font = Enum.Font.Code
+    actionLabel.TextSize = 16
+    actionLabel.Text = "Action: Loading..."
+
+    getgenv().UpdateAction = function(text)
+        actionLabel.Text = "Action: " .. tostring(text)
+    end
+
+    local startTime = tick()
+    spawn(function()
+        while true do
+            local t = tick() - startTime
+            local h = math.floor(t / 3600)
+            local m = math.floor((t % 3600) / 60)
+            local s = math.floor(t % 60)
+            timeLabel.Text = string.format("Time: %02d:%02d:%02d", h, m, s)
+            wait(1)
+        end
+    end)
+
+    local fps = 0
+    spawn(function()
+        local counter = 0
+        local lastTime = tick()
+        game:GetService("RunService").RenderStepped:Connect(function()
+            counter = counter + 1
+            if tick() - lastTime >= 1 then
+                fps = counter
+                counter = 0
+                lastTime = tick()
+                fpsLabel.Text = "FPS: " .. tostring(fps)
+            end
+        end)
+    end)
+
+    local Lighting = game:GetService("Lighting")
+    local Terrain = workspace:FindFirstChildOfClass("Terrain")
+    sethiddenproperty(Lighting, "Technology", Enum.Technology.Compatibility)
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = math.huge
+    Lighting.Brightness = 5
+    Lighting.ClockTime = 14
+    Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
+    Lighting.Ambient = Color3.new(1, 1, 1)
+    if Terrain then
+        Terrain.WaterWaveSize = 0
+        Terrain.WaterWaveSpeed = 0
+        Terrain.WaterReflectance = 0
+        Terrain.WaterTransparency = 1
+    end
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level02
+    settings().Rendering.EagerBulkExecution = false
+end)
+
+-- HOOK PlayerData
+task.spawn(function()
+    local DataService = require(game:GetService("ReplicatedStorage").Modules.DataService)
+    if typeof(DataService.GetData) == "function" then
+        local oldGetData = DataService.GetData
+
+        DataService.GetData = function(self, ...)
+            local data = oldGetData(self, ...)
+            cachedPlayerData = data
+            return data
+        end
+    else
+        warn("DataService.GetData bukan fungsi atau belum tersedia.")
+    end
+end)
+
+pcall(function()
+    local Lighting = game:GetService("Lighting")
+    sethiddenproperty(Lighting, "Technology", Enum.Technology.Compatibility)
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = 1e10
+    Lighting.Brightness = 5
+    Lighting.ClockTime = 12
+    Lighting.Ambient = Color3.new(1,1,1)
+    Lighting.OutdoorAmbient = Color3.new(1,1,1)
+
+    local Terrain = workspace:FindFirstChildOfClass("Terrain")
+    if Terrain then
+        Terrain.WaterWaveSize = 0
+        Terrain.WaterWaveSpeed = 0
+        Terrain.WaterReflectance = 0
+        Terrain.WaterTransparency = 1
+    end
+
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level02
+    settings().Rendering.EagerBulkExecution = false
+
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("BasePart") then
+            v.Material = Enum.Material.SmoothPlastic
+            v.Reflectance = 0
+        elseif v:IsA("Decal") or v:IsA("Texture") then
+            v:Destroy()
+        elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+            v:Destroy()
+        end
+    end
+
+    for _, v in pairs(Lighting:GetChildren()) do
+        if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("BloomEffect") or v:IsA("ColorCorrectionEffect") then
+            v.Enabled = false
+        end
+    end
+
+    local cam = workspace:FindFirstChildOfClass("Camera")
+    if cam then
+        cam.FieldOfView = 70
+    end
+
+    game:GetService("UserSettings"):GetService("UserGameSettings").SavedQualityLevel = Enum.SavedQualitySetting.QualityLevel1
+end)
+
+pcall(function()
+    sethiddenproperty(game:GetService("Lighting"), "Technology", Enum.Technology.Compatibility)
+
+    local Lighting = game:GetService("Lighting")
+    Lighting.GlobalShadows = false
+    Lighting.FogEnd = 1e10
+    Lighting.Brightness = 0
+    Lighting.ClockTime = 14
+    Lighting.Ambient = Color3.new(1, 1, 1)
+    Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
+
+    for _, v in ipairs(Lighting:GetChildren()) do
+        if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("BloomEffect") or v:IsA("ColorCorrectionEffect") then
+            v:Destroy()
+        end
+    end
+
+    local Terrain = workspace:FindFirstChildOfClass("Terrain")
+    if Terrain then
+        Terrain.WaterWaveSize = 0
+        Terrain.WaterWaveSpeed = 0
+        Terrain.WaterReflectance = 0
+        Terrain.WaterTransparency = 1
+    end
+
+    for _, obj in ipairs(workspace:GetDescendants()) do
+        if obj:IsA("BasePart") then
+            obj.Material = Enum.Material.SmoothPlastic
+            obj.Reflectance = 0
+            obj.CastShadow = false
+        elseif obj:IsA("Decal") or obj:IsA("Texture") then
+            obj:Destroy()
+        elseif obj:IsA("ParticleEmitter") or obj:IsA("Trail") or obj:IsA("Smoke") or obj:IsA("Fire") then
+            obj:Destroy()
+        elseif obj:IsA("Sound") then
+            obj.Volume = 0
+        end
+    end
+
+    local cam = workspace:FindFirstChildOfClass("Camera")
+    if cam then
+        cam.FieldOfView = 50
+    end
+
+    settings().Rendering.QualityLevel = Enum.QualityLevel.Level01
+    settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level02
+    settings().Rendering.EagerBulkExecution = false
+    game:GetService("UserSettings"):GetService("UserGameSettings").SavedQualityLevel = Enum.SavedQualitySetting.QualityLevel1
+
+    for _, gui in ipairs(game.Players.LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
+        if not gui:IsA("ScreenGui") then
+            gui:Destroy()
+        end
+    end
+end)
+
+task.spawn(function()
+    game:GetService("Lighting").FogEnd = 1e10
+    game:GetService("Lighting").FogStart = 1e10
+    game:GetService("Lighting").GlobalShadows = false
+    game:GetService("Lighting").Brightness = 0
+
+    for _, v in pairs(game:GetDescendants()) do
+        if v:IsA("Decal") or v:IsA("Texture") or v:IsA("ParticleEmitter") or v:IsA("Trail") then
+            v:Destroy()
+        elseif v:IsA("Sound") then
+            v.Volume = 0
+        end
+    end
+
+    local Terrain = workspace:FindFirstChildOfClass("Terrain")
+    if Terrain then
+        Terrain.WaterWaveSize = 0
+        Terrain.WaterWaveSpeed = 0
+        Terrain.WaterReflectance = 0
+        Terrain.WaterTransparency = 1
+    end
+
+    for _, v in pairs(game:GetService("Lighting"):GetChildren()) do
+        if v:IsA("BlurEffect") or v:IsA("SunRaysEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("BloomEffect") or v:IsA("DepthOfFieldEffect") then
+            v.Enabled = false
+        end
+    end
+
+    local cam = workspace.CurrentCamera
+    if cam then
+        for _, v in pairs(cam:GetChildren()) do
+            if v:IsA("PostEffect") then
+                v:Destroy()
+            end
+        end
+    end
+end)
+
+task.delay(6, function()
+    pcall(function()
+        local preserved = {
+            "Camera", "Terrain", "Effects", "Players", "Lighting", "SoundService",
+            "RunService", "ReplicatedStorage", "ReplicatedFirst", "StarterGui", "StarterPack"
+        }
+
+        for _, obj in ipairs(game:GetChildren()) do
+            if not table.find(preserved, obj.Name) then
+                if obj:IsA("Model") or obj:IsA("Folder") or obj:IsA("Part") then
+                    obj:Destroy()
+                end
+            end
+        end
+
+        local preservedInWorkspace = {
+            "Camera", "Terrain", "Ignore", "Map", "Spawns"
+        }
+
+        for _, obj in ipairs(workspace:GetChildren()) do
+            if not table.find(preservedInWorkspace, obj.Name) then
+                if obj:IsA("Model") or obj:IsA("Folder") or obj:IsA("Part") then
+                    obj:Destroy()
+                end
+            end
+        end
+    end)
+end)
