@@ -116,7 +116,7 @@ getgenv().Config = {
         Enabled = true, -- เปิด/ปิด Auto Hatch Egg
     },
     ["Enable Screen Black"] = false, -- เปิด/ปิด ฟังก์ชัน Screen Black
-    ["Screen Black FPS Cap"] = 30, -- FPS Cap ตอน Screen Black
+    ["Screen Black FPS Cap"] = 5, -- FPS Cap ตอน Screen Black
 }
 
 local script_key = "poXxwoOXifupROYeAcYexuXPvbrLtdYv"
