@@ -88,7 +88,7 @@ getgenv().Configuration = {
     { Name = "Crafters Seed Pack", Amount = 200 },
     { Name = "Anti Bee Egg", Amount = 500 },
     },
-
+    SummerEvent = true, -- true/false เปิด Summer Event
 
     SELL_PET_MIN_COUNT = 4, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
