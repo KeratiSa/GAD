@@ -80,14 +80,12 @@ getgenv().Configuration = {
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
     },
-    EVENTSHOP = { -- กำหนด Item ที่ต้องการให้ซื้อจาก Event Shop
-         "Bee Egg",
-    },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
     { Name = "Crafters Seed Pack", Amount = 200 },
     { Name = "Anti Bee Egg", Amount = 500 },
     },
+
     SummerEvent = true, -- true/false เปิด Summer Event
 
     SELL_PET_MIN_COUNT = 4, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
