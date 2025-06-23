@@ -2,20 +2,16 @@ repeat wait() until game:IsLoaded()
 task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Bamboo",
         "Carrot",
         "Watermelon",
-        "Pumpkin",
-        "Mushroom",
-        "Lilac",
         "Sugar Apple",
-        "Ember Lily",
         "Cauliflower",
-        "Avacado",
         "Pineapple",
         "Kiwi",
         "Bell Pepper",
         "Sugar Apple",
+        "Prickly Pear",
+        "Feijoa",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
