@@ -12,6 +12,9 @@ getgenv().Configuration = {
         "Sugar Apple",
         "Prickly Pear",
         "Feijoa",
+         "Bamboo",
+        "Mushroom",
+        
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
