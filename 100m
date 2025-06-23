@@ -21,7 +21,7 @@ getgenv().Config = {
     ["Auto Delete Seed Planted"] = {
         ["Enabled"] = true,
         ["Auto Delete Seed Low Price"] = true,
-        ["Slot"] = 500,
+        ["Slot"] = 100,
         ["Name Seed Delete"] = {
         "Lilac",
         "Prickly Pear",
