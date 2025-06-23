@@ -12,7 +12,7 @@ getgenv().Configuration = {
         "Sugar Apple",
         "Prickly Pear",
         "Feijoa",
-         "Bamboo",
+        "Bamboo",
         "Mushroom",
         
     },
