@@ -18,7 +18,6 @@ getgenv().Configuration = {
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
-        "Bee Egg",
         "Mythical Egg",
         "Anti Bee Egg",
         "Paradise Egg",
