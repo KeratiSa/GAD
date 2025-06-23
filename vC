@@ -109,7 +109,7 @@ getgenv().Configuration = {
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
         { Money = 1000000, Minutes = 10 },
-        { Money = 0, Minutes = 1 },
+        { Money = 0, Minutes = 2 },
     },
 }
 
