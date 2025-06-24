@@ -69,6 +69,12 @@ getgenv().Configuration = {
         "Kiwi",
         "Wasp",
         "Tarantula Hawk",
+        "Sea Turtle",
+        "Flamingo",
+        "Toucan",
+        "Ostrich",
+        "Peacock",
+        "Capybara",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "",
@@ -80,7 +86,7 @@ getgenv().Configuration = {
 
     SummerEvent = true, -- true/false เปิด Summer Event
 
-    SELL_PET_MIN_COUNT = 4, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_MIN_COUNT = 3, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
