@@ -75,7 +75,6 @@ getgenv().Configuration = {
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Crafters Seed Pack", Amount = 200 },
     { Name = "Anti Bee Egg", Amount = 500 },
     },
 
