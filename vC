@@ -22,10 +22,7 @@ getgenv().Configuration = {
         "Night Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
-        "Bee",
-        "Honey Bee",
-        "Wasp",
-        "Tarantula Hawk",
+        "Giant Ant",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
