@@ -21,9 +21,7 @@ getgenv().Configuration = {
         "Mythical Egg",
         "Anti Bee Egg",
         "Paradise Egg",
-        "Rare Summer Egg",
         "Night Egg",
-        
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Bee",
@@ -99,7 +97,7 @@ getgenv().Configuration = {
     AutoEvent = true, -- true/false เปิด ส่ง Event
     AutoFavEvent = true, -- true/false เปิด Auto Fav Event
     OPEN_SEEDPACK = true, -- true/false เปิด Night Seed Pack
-    MoneyEnough = 100000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+    MoneyEnough = 50000000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1142855646396555424/cxsQLnHUXhsSB_DmPIp7rNfTBJVnwNTvoZ69MefrzzJqDXDEwFLjQbN0J_vu3TE-6hU8",     
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "Orangutan",},
