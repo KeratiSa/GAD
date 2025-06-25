@@ -2,16 +2,8 @@ repeat wait() until game:IsLoaded()
 task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Carrot",
-        "Watermelon",
-        "Sugar Apple",
-        "Cauliflower",
-        "Pineapple",
-        "Parasol Flower",
         "Sugar Apple",
         "Tomato",
-        "Bamboo",
-        "Mushroom",
         
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
@@ -89,7 +81,7 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 100, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 150, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
@@ -104,7 +96,7 @@ getgenv().Configuration = {
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "Orangutan",},
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 1000000, Minutes = 2 },
+        { Money = 1000000, Minutes = 4 },
         { Money = 0, Minutes = 2 },
     },
 }
