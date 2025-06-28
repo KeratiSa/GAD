@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer 
-getgenv().Key = "c49b64bf05803564f900bcaa" 
+getgenv().Key = "be9f2319660feaad3dd3ddac" 
 getgenv().Config = {
 	["Auto Delete Pet"] = false,
 	["Select Name Plant Delete"] = {
