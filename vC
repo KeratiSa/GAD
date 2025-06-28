@@ -8,10 +8,19 @@ getgenv().Configuration = {
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
-        "Bee Egg",
         "Anti Bee Egg",
         "Paradise Egg",
         "Night Egg",
+        "Rare Summer Egg",
+    },
+   BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
+        "Legendary Egg",
+        "Mythical Egg",
+        "Bug Egg",
+        "Night Egg",
+        "Bee Egg",
+        "Anti Bee Egg",
+        "Paradise Egg",
         "Rare Summer Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
