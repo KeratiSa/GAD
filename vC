@@ -69,7 +69,9 @@ getgenv().Configuration = {
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
     { Name = "Anti Bee Egg", Amount = 500 },
     },
-
+    EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
+        { Name = "Oasis Egg", Amount = 20 },
+    },
     SummerEvent = true, -- true/false เปิด Summer Event
 
     SELL_PET_MIN_COUNT = 3, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
