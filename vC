@@ -29,6 +29,10 @@ getgenv().Configuration = {
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Giant Ant",
+        "Bee",
+        "Chicken",
+        "Wasp",
+        "Tarantula Hawk",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
@@ -77,10 +81,10 @@ getgenv().Configuration = {
         "Capybara",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
-                "Basic Sprinkler",
-                "Advanced Sprinkler",
-                "Godly Sprinkler",
-                "Master Sprinkler",
+        "Basic Sprinkler",
+        "Advanced Sprinkler",
+        "Godly Sprinkler",
+        "Master Sprinkler",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
