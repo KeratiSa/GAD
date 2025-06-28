@@ -77,7 +77,10 @@ getgenv().Configuration = {
         "Capybara",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
-        "",
+                "Basic Sprinkler",
+                "Advanced Sprinkler",
+                "Godly Sprinkler",
+                "Master Sprinkler",
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
