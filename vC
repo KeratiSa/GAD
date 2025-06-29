@@ -3,10 +3,16 @@ task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลาย
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Tomato",
+        "Carrot",
+        "Watermelon",
+        "Mushroom",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
         "Tomato",
         "Sugar Apple",
+        "Carrot",
+        "Watermelon",
+        "Mushroom",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
