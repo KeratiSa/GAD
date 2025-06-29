@@ -1,32 +1,8 @@
-repeat task.wait() until game:IsLoaded()
-_G.SettingsMasterp = {
-    ['Pet'] = {
-        'Raccoon',
-        'Red Fox',
-        'Night Owl',
-        'Blood Kiwi',
-        'Dragonfly',
-        'Bee',
-        'Honey Bee',
-        'Queen Bee'
-    },
-    ['Egg'] = {
-        'Bug Egg',
-        'Mythical Egg',
-        'Legendary Egg'
-    },
-    ['Seed'] = {
-        'Moon Blossom',
-        'Sunflower'
-    },
-    ['Holdable'] = {
-        'Candy Blossom'
-    },
-    ['Sprinkler'] = {
-        'Master Sprinkler'
-    } 
-    -- u can add more item list
+getgenv().Hermanos_Settings = {
+    ['Seeds'] = {"Elephant Ears","Sunflower","Dragon Pepper","Candy Blossom"},
+    ['Pets'] = {"Scarlet Macaw","Mimic Octopus","Dragonfly","Praying Mantis","Butterfly","Moon Cat","Toucan","Queen Bee","Raccoon","Red Fox","Disco Bee","Meerkat","Sand Snake","Axolotl","Hyacinth Macaw","Fennec Fox"},
+    ['Gears'] = {"Recall Wrench","Harvest Tool","Advanced Sprinkler","Master Sprinkler","Trowel","Friendship Pot","Lightning Rod","Godly Sprinkler","Watering Can","Basic Sprinkler"},
+    ['Eggs'] = {"Rare Summer Egg","Paradise Egg","Epic Egg", "Divine Egg", "Rare Egg", "Uncommon Egg", "Legendary Egg", "Exotic Bug Egg", "Common Egg", "Bug Egg", "Night Egg", "Premium Night Egg", "Mythical Egg", "Bee Egg", "Premium Anti Bee Egg", "Anti Bee Egg"}
 }
-_G.Key = 'Kerati'
-_G.Discord = '363593020811247618'
-getgenv().Loaders = loadstring(game:HttpGet("https://raw.githubusercontent.com/Achitsak/scripts/main/masterp_"))()
+ 
+task.spawn(function() loadstring(game:HttpGet('https://raw.githubusercontent.com/hermanos-dev/hermanos-script/main/gag-main.lua'))() end)
