@@ -1,6 +1,6 @@
 return {
     ['Seeds'] = {"Elephant Ears","Sunflower","Dragon Pepper","Candy Blossom","Pink Lily","Purple Dahlia","Honeysuckle",},
-    ['Pets'] = {"Scarlet Macaw","Mimic Octopus","Dragonfly","Praying Mantis","Butterfly","Moon Cat","Toucan","Queen Bee","Raccoon","Red Fox","Disco Bee","Meerkat","Sand Snake","Axolotl","Hyacinth Macaw","Fennec Fox","Flamingo","Blood owl"},
+    ['Pets'] = {"Scarlet Macaw","Mimic Octopus","Dragonfly","Praying Mantis","Butterfly","Moon Cat","Toucan","Queen Bee","Raccoon","Red Fox","Disco Bee","Meerkat","Ostrich","Axolotl","Hyacinth Macaw","Fennec Fox","Flamingo","Blood owl"},
     ['Gears'] = {"Recall Wrench","Harvest Tool","Advanced Sprinkler","Master Sprinkler","Trowel","Friendship Pot","Lightning Rod","Godly Sprinkler","Watering Can","Basic Sprinkler"},
     ['Eggs'] = {"Rare Summer Egg","Paradise Egg","Epic Egg", "Divine Egg", "Rare Egg", "Uncommon Egg", "Legendary Egg", "Exotic Bug Egg", "Common Egg", "Bug Egg", "Night Egg", "Premium Night Egg", "Mythical Egg", "Bee Egg", "Premium Anti Bee Egg", "Anti Bee Egg"}
 }
