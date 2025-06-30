@@ -94,6 +94,7 @@ getgenv().Configuration = {
         "Sand Snake",
         "Meerkat",
         "Axolotl",
+        "Ostrich",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
