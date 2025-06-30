@@ -98,6 +98,7 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
     { Name = "Anti Bee Egg", Amount = 500 },
+    "Honeysuckle"
     },
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
         { Name = "Oasis Egg", Amount = 20 },
