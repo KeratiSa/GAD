@@ -40,6 +40,7 @@ getgenv().Configuration = {
         "Chicken",
         "Starfish",
         "Tarantula Hawk",
+        "Ostrich",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
@@ -50,6 +51,7 @@ getgenv().Configuration = {
         "Wasp",
         "Tarantula Hawk",
         "Starfish",
+        "Ostrich",
     },
     SELL_PET = {
         -- กำหนดชื่อ pet ที่ต้องการขาย
@@ -84,11 +86,14 @@ getgenv().Configuration = {
         "Tarantula Hawk",
         "Sea Turtle",
         "Flamingo",
-        "Ostrich",
+        "Moon Cat",
         "Peacock",
         "Capybara",
         "Seagull",
         "Crab",
+        "Sand Snake",
+        "Meerkat",
+        "Axolotl",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
