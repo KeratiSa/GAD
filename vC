@@ -50,6 +50,7 @@ getgenv().Configuration = {
         "Tarantula Hawk",
         "Starfish",
         "Ostrich",
+        "Seal",
     },
     SELL_PET = {
         -- กำหนดชื่อ pet ที่ต้องการขาย
@@ -110,13 +111,13 @@ getgenv().Configuration = {
     SummerEvent = true, -- true/false เปิด Summer Event
 
     SELL_PET_MIN_COUNT = 2, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
-    SELL_PET_KEEP_COUNT = 1, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
+    SELL_PET_KEEP_COUNT = 0, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 80, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 90, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
