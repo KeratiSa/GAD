@@ -52,7 +52,6 @@ getgenv().Configuration = {
         "Tarantula Hawk",
         "Starfish",
         "Ostrich",
-        "Seal",
     },
     SELL_PET = {
         -- กำหนดชื่อ pet ที่ต้องการขาย
@@ -95,6 +94,7 @@ getgenv().Configuration = {
         "Meerkat",
         "Axolotl",
         "Ostrich",
+        "Starfish",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
