@@ -120,7 +120,8 @@ getgenv().Configuration = {
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
-
+    SELL_PET_KEPP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนั
+    OpenFlowerSeedPack = 1, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
     AutoEvent = true, -- true/false เปิด ส่ง Event
     AutoFavEvent = true, -- true/false เปิด Auto Fav Event
