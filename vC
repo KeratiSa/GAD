@@ -5,7 +5,6 @@ getgenv().Configuration = {
         "Tomato",
         "Carrot",
         "Watermelon",
-        "Mushroom",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
         "Tomato",
