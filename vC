@@ -94,6 +94,7 @@ getgenv().Configuration = {
         "Starfish",
         "Toucan",
         "Capybara",
+        "Blood Kiwi",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
