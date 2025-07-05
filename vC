@@ -2,16 +2,29 @@ repeat wait() until game:IsLoaded()
 task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-                "Sugar Apple",
+        "Sugar Apple",
+        "Bamboo",
         "Carrot",
+        "Orange Tulip",
         "Watermelon",
+        "Pumpkin",
+        "Daffodil",
         "Mushroom",
+        "Nightshade",
+        "Beanstalk",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
         "Sugar Apple",
+        "Bamboo",
         "Carrot",
+        "Orange Tulip",
         "Watermelon",
+        "Pumpkin",
+        "Daffodil",
         "Mushroom",
+        "Nightshade",
+        "Beanstalk",
+
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         "Bug Egg",
@@ -124,6 +137,7 @@ getgenv().Configuration = {
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
+    UpgradePetInventory = false, -- true/false เปิด Auto Upgrade Pet Inventory
     SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนั
     OpenFlowerSeedPack = 1, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
