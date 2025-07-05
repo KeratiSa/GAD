@@ -2,10 +2,12 @@ repeat wait() until game:IsLoaded()
 task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Tomato",
+                "Sugar Apple",
+        "Carrot",
+        "Watermelon",
+        "Mushroom",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
-        "Tomato",
         "Sugar Apple",
         "Carrot",
         "Watermelon",
