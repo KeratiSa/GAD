@@ -45,6 +45,7 @@ getgenv().Configuration = {
         "Paradise Egg",
         "Rare Summer Egg",
         "Common Summer Egg",
+        "Dinosaur Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Giant Ant",
