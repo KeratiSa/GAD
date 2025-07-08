@@ -165,9 +165,8 @@ getgenv().Configuration = {
     },
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    "Anti Bee Egg",
-    "Ancient Seed Pack",
-    
+    { Name = "Ancient Seed Pack" },
+    { Name = "Anti Bee Egg" },
     },
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
     },
