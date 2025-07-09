@@ -112,6 +112,10 @@ getgenv().Configuration = {
         "Toucan",
         "Capybara",
         "Blood Kiwi",
+        "Pterodactyl",
+        "Stegosaurus",
+        "Triceratops",
+        "Raptor",
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
         "Dog",
