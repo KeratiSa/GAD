@@ -34,6 +34,7 @@ getgenv().Configuration = {
         "Rare Summer Egg",
         "Oasis Egg",
         "Mythical Egg",
+        "Dinosaur Egg",
     },
    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -113,7 +114,7 @@ getgenv().Configuration = {
         "Blood Kiwi",
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
-                "Dog",
+        "Dog",
         "Golden Lab",
         "Bunny",
         "Black Bunny",
@@ -156,6 +157,7 @@ getgenv().Configuration = {
         "Toucan",
         "Capybara",
         "Blood Kiwi",
+        
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
@@ -170,7 +172,6 @@ getgenv().Configuration = {
     },
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
     },
-    SummerEvent = false, -- true/false เปิด Summer Event
 
     SELL_PET_MIN_COUNT = 1, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 1, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
