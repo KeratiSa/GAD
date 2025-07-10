@@ -35,6 +35,7 @@ getgenv().Configuration = {
         "Oasis Egg",
         "Mythical Egg",
         "Dinosaur Egg",
+        "Bee Egg",
     },
    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -126,6 +127,7 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
     { Name = "Anti Bee Egg" },
+    { Name = "Ancient Seed Pack" },           
     },
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
     },
