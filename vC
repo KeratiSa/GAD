@@ -110,13 +110,14 @@ getgenv().Configuration = {
         "Stegosaurus",
         "Triceratops",
         "Raptor",
+        "Flamingo",
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
         "Bee",
         "Grey Mouse",
         "Caterpillar",
         "Starfish",
-        "Flamingo",
+        "Ostrich",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
