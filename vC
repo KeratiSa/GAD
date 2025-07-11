@@ -36,6 +36,7 @@ getgenv().Configuration = {
         "Mythical Egg",
         "Dinosaur Egg",
         "Bee Egg",
+        "Rare Egg",
     },
    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -48,6 +49,7 @@ getgenv().Configuration = {
         "Rare Summer Egg",
         "Common Summer Egg",
         "Dinosaur Egg",
+        "Rare Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Blood Kiwi", 
@@ -111,6 +113,10 @@ getgenv().Configuration = {
         "Triceratops",
         "Raptor",
         "Flamingo",
+        "Spotted Deer",
+        "Pig",
+        "Orange Tabby",
+        "Monkey",
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
         "Bee",
@@ -162,6 +168,10 @@ getgenv().Configuration = {
         "Triceratops",
         "Raptor",
         "Flamingo",
+        "Spotted Deer",
+        "Pig",
+        "Rooster",
+        "Monkey",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
