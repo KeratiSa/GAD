@@ -2,16 +2,11 @@ repeat wait() until game:IsLoaded()
 task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Sugar Apple",
-        "Bamboo",
-        "Carrot",
-        "Orange Tulip",
-        "Watermelon",
-        "Pumpkin",
-        "Daffodil",
-        "Mushroom",
-        "Nightshade",
-        "Beanstalk",
+        "Stonebite",
+        "Paradise Petal",
+        "Horned Dinoshroom",
+        "Boneboo",
+        "Firefly Fern",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
         "Sugar Apple",
@@ -124,7 +119,7 @@ getgenv().Configuration = {
         "Caterpillar",
         "Starfish",
         "Ostrich",
-               "Dog",
+        "Dog",
         "Golden Lab",
         "Bunny",
         "Black Bunny",
@@ -173,6 +168,9 @@ getgenv().Configuration = {
         "Rooster",
         "Monkey",
     },
+    PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
+        "Dog",
+    },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
         "Advanced Sprinkler",
@@ -180,11 +178,14 @@ getgenv().Configuration = {
         "Master Sprinkler",
     },
 
-    Craft_Event = { -- กำหนดชื่อที่ต้องการจะคราฟ และจำนวน
-    { Name = "Anti Bee Egg" },
-    { Name = "Ancient Seed Pack" },           
+    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Event
+        { Name = "Ancient Seed Pack", Amount = 200 },
+        { Name = "Anti Bee Egg", Amount = 200 },
     },
+
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
+        { Name = "Summer Seed Pack", Amount = 2000 },
+        { Name = "Oasis Egg", Amount = 200 },
     },
 
     SELL_PET_MIN_COUNT = 1, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
@@ -194,8 +195,8 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 70, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
-
+    MaxCropInFarm = 80, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    TakeAncientPlant = true, -- true/false เปิด Take Ancient Plant
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
     UpgradePetInventory = false, -- true/false เปิด Auto Upgrade Pet Inventory
