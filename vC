@@ -60,6 +60,7 @@ getgenv().Configuration = {
         "Blood Kiwi", 
         "Seal",
         "Ostrich",
+        "Starfish",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
@@ -179,7 +180,7 @@ getgenv().Configuration = {
         "Monkey",
     },
     PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
-        "Dog",
+        "Starfish",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
