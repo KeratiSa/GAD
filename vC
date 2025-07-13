@@ -19,6 +19,11 @@ getgenv().Configuration = {
         "Beanstalk",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
+        "Stonebite",
+        "Paradise Petal",
+        "Horned Dinoshroom",
+        "Boneboo",
+        "Firefly Fern",
         "Sugar Apple",
         "Bamboo",
         "Carrot",
