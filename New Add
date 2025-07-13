@@ -1,0 +1,25 @@
+repeat wait() until game:IsLoaded()
+task.wait(120)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+local interact = function(path)
+    game:GetService("GuiService").SelectedObject = path
+    task.wait()
+    if game:GetService("GuiService").SelectedObject == path then
+        game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.Return, false, game)
+        game:GetService("VirtualInputManager"):SendKeyEvent(false, Enum.KeyCode.Return, false, game)
+        task.wait()
+    end
+    game:GetService("GuiService").SelectedObject = nil
+    wait(1)
+end
+task.spawn(function()
+    while true do task.wait(3)
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                interact(game:GetService("CoreGui").PlayerList.Children.OffsetFrame.PlayerScrollList.SizeOffsetFrame.ScrollingFrameContainer.ScrollingFrameClippingFrame.ScollingFrame.OffsetUndoFrame["p_"..tostring(v.UserId)].ChildrenFrame.NameFrame.BGFrame)
+                if not game:GetService("CoreGui").PlayerList.Children.OffsetFrame.PlayerScrollList.SizeOffsetFrame.ScrollingFrameContainer.PlayerDropDown.InnerFrame.FriendButton.CurrentButtonContainer.DropDownButton.HoverBackground.Text.Text:find("Cancel") then
+                    interact(game:GetService("CoreGui").PlayerList.Children.OffsetFrame.PlayerScrollList.SizeOffsetFrame.ScrollingFrameContainer.PlayerDropDown.InnerFrame.FriendButton.CurrentButtonContainer.DropDownButton)
+                end
+            end
+        end
+    end
+end)
