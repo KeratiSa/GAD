@@ -1,0 +1,84 @@
+repeat wait() until game:IsLoaded()
+task.wait(20)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
+local HttpService = game:GetService("HttpService")
+
+local PetUtilities = require(ReplicatedStorage.Modules.PetServices.PetUtilities)
+local ReplicationClass = require(ReplicatedStorage.Modules.ReplicationClass)
+
+local ActivePetsService = ReplicationClass.new("ActivePetsService_Replicator")
+
+local webhookUrl = "https://discord.com/api/webhooks/1393963317365838015/LVV8Xgz_mAstuNwEWFfJt2ksNFlzVEBt-CvLXmJpHd-vQqqYz73zf3X8OQD4CbbUu8Ct"
+
+local function sendDiscordEmbed(title, description)
+    local embed = {
+        {
+            title = title,
+            description = description,
+            color = 0x1abc9c, -- สีเขียวสวย
+            timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ"),
+            footer = {
+                text = "Roblox Pet Monitor"
+            }
+        }
+    }
+    local payload = {
+        embeds = embed
+    }
+    local jsonData = HttpService:JSONEncode(payload)
+
+    local response = http_request({
+        Url = webhookUrl,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json",
+            ["Content-Length"] = tostring(#jsonData)
+        },
+        Body = jsonData
+    })
+
+    print("Status Code:", response.StatusCode)
+    print("Response Body:", response.Body)
+end
+
+local function checkAndSend()
+    local success, dataResult = pcall(function()
+        return ActivePetsService:YieldUntilData()
+    end)
+
+    if success then
+        local dataTable = dataResult.Table
+        if dataTable and dataTable.PlayerPetData then
+            local playerName = Players.LocalPlayer.Name
+            local playerPetData = dataTable.PlayerPetData[playerName]
+            if playerPetData then
+                local petInventory = playerPetData['PetInventory']
+                if petInventory and petInventory['Data'] then
+                    local petData = petInventory['Data']
+                    for _, v in pairs(petData) do
+                        local baseWeight = v.PetData.BaseWeight or 1
+                        local level = v.PetData.Level or 1
+                        local weight = PetUtilities:CalculateWeight(baseWeight, level)
+                        local petType = v.PetType or "Unknown"
+
+                        if (weight > 5 and level <= 10) or (weight > 10) then
+                            local title = "🐾 สัตว์เลี้ยงเกินเงื่อนไข"
+                            local description = string.format(
+                                "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
+                                playerName, petType, weight, level
+                            )
+                            sendDiscordEmbed(title, description)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Loop ยิง webhook ทุก 500 วินาที
+while true do
+    checkAndSend()
+    task.wait(500) -- รอ 500 วิ ก่อนรอบถัดไป 
+end
