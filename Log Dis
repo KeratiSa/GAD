@@ -62,7 +62,7 @@ local function checkAndSend()
                         local weight = PetUtilities:CalculateWeight(baseWeight, level)
                         local petType = v.PetType or "Unknown"
 
-                        if (weight > 5 and level <= 10) or (weight > 10) then
+                        if (weight > 5 and level <= 10) or (weight > 10 and level <= 45) then
                             local title = "🐾 สัตว์เลี้ยงเกินเงื่อนไข"
                             local description = string.format(
                                 "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
