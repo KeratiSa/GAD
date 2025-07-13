@@ -193,8 +193,7 @@ getgenv().Configuration = {
         "Master Sprinkler",
     },
 
-    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Event
-        { Name = "Ancient Seed Pack", Amount = 200 },
+    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
     },
 
