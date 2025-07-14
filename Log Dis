@@ -1,5 +1,6 @@
 repeat wait() until game:IsLoaded()
-task.wait(20)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+task.wait(20) -- ระยะเวลารอ ถ้าเปิดหลายจอแนะนำให้ตั้งเป็น 20 วิ
+
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
@@ -12,17 +13,16 @@ local ActivePetsService = ReplicationClass.new("ActivePetsService_Replicator")
 local webhookUrl = "https://discord.com/api/webhooks/1393963317365838015/LVV8Xgz_mAstuNwEWFfJt2ksNFlzVEBt-CvLXmJpHd-vQqqYz73zf3X8OQD4CbbUu8Ct"
 
 local function sendDiscordEmbed(title, description)
-    local embed = {
-        {
-            title = title,
-            description = description,
-            color = 0x1abc9c, -- สีเขียวสวย
-            timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ"),
-            footer = {
-                text = "Roblox Pet Monitor"
-            }
+    local embed = {{
+        title = title,
+        description = description,
+        color = 0x1abc9c, -- สีเขียวสวย
+        timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ"),
+        footer = {
+            text = "Roblox Pet Monitor"
         }
-    }
+    }}
+
     local payload = {
         embeds = embed
     }
@@ -62,13 +62,22 @@ local function checkAndSend()
                         local weight = PetUtilities:CalculateWeight(baseWeight, level)
                         local petType = v.PetType or "Unknown"
 
-                        if (weight > 5 and level <= 10) or (weight > 10 and level <= 39) then
-                            local title = "🐾 สัตว์เลี้ยงเกินเงื่อนไข"
-                            local description = string.format(
-                                "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
-                                playerName, petType, weight, level
+                        if weight >= 20 then
+                            sendDiscordEmbed(
+                                "⚠️ เจอสัตว์น้ำหนักมาก!",
+                                string.format(
+                                    "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
+                                    playerName, petType, weight, level
+                                )
                             )
-                            sendDiscordEmbed(title, description)
+                        elseif (weight > 5 and level <= 10) or (weight > 10 and level <= 39) then
+                            sendDiscordEmbed(
+                                "🐾 สัตว์เข้าเงื่อนไข",
+                                string.format(
+                                    "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
+                                    playerName, petType, weight, level
+                                )
+                            )
                         end
                     end
                 end
@@ -80,5 +89,5 @@ end
 -- Loop ยิง webhook ทุก 500 วินาที
 while true do
     checkAndSend()
-    task.wait(500) -- รอ 500 วิ ก่อนรอบถัดไป 
+    task.wait(500) -- รอ 500 วิ ก่อนรอบถัดไป
 end
