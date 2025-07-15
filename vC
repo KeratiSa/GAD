@@ -129,6 +129,10 @@ getgenv().Configuration = {
         "Pig",
         "Orange Tabby",
         "Monkey",
+        "Parasaurolophus",
+        "Iguanodon",
+        "Pachycephalosaurus",
+        "Dilophosaurus",
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
         "Bee",
