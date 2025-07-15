@@ -4,7 +4,6 @@ getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Stonebite",
         "Paradise Petal",
-        "Horned Dinoshroom",
         "Boneboo",
         "Firefly Fern",
         "Bamboo",
