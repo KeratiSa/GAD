@@ -71,6 +71,7 @@ getgenv().Configuration = {
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
+        "Seal",
         "Honey Bee",
         "Chicken",
         "Rooster",
