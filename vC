@@ -33,6 +33,8 @@ getgenv().Configuration = {
 
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
+        "Primal Egg",
+        "Dinosaur Egg",
         "Bug Egg",
         "Anti Bee Egg",
         "Paradise Egg",
@@ -40,11 +42,10 @@ getgenv().Configuration = {
         "Rare Summer Egg",
         "Oasis Egg",
         "Mythical Egg",
-        "Dinosaur Egg",
         "Bee Egg",
         "Rare Egg",
         "Common Egg",
-        "Primal Egg",
+        
     },
    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -195,14 +196,13 @@ getgenv().Configuration = {
     PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
-        "Basic Sprinkler",
-        "Advanced Sprinkler",
-        "Godly Sprinkler",
-        "Master Sprinkler",
+
     },
 
     Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
+        { Name = "Ancient Seed Pack", Amount = 200 },
+        
     },
 
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
