@@ -190,7 +190,6 @@ getgenv().Configuration = {
         "Monkey",
     },
     PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
-        "Starfish",
     },
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
         "Basic Sprinkler",
