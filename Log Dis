@@ -89,5 +89,5 @@ end
 -- Loop ยิง webhook ทุก 500 วินาที
 while true do
     checkAndSend()
-    task.wait(500) -- รอ 500 วิ ก่อนรอบถัดไป
+    task.wait(1500) -- รอ 500 วิ ก่อนรอบถัดไป
 end
