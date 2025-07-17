@@ -66,6 +66,7 @@ getgenv().Configuration = {
         "Seal",
         "Ostrich",
         "Starfish",
+        "Bald Eagle",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
         "Bee",
@@ -200,12 +201,11 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
-        { Name = "Ancient Seed Pack", Amount = 5 },
     },
 
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
         { Name = "Summer Seed Pack", Amount = 2000 },
-        { Name = "Oasis Egg", Amount = 200 },
+        { Name = "Bald Eagle", Amount = 200 },
     },
 
     SELL_PET_MIN_COUNT = 3, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
