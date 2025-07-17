@@ -133,9 +133,11 @@ getgenv().Configuration = {
         "Dilophosaurus",
         "Scarlet Macaw",
         "Squirrel",
+        "Snail", 
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
         "Bee",
+        "Snail",
         "Squirrel",
         "Scarlet Macaw",
         "Snail",
