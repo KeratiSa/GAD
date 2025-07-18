@@ -14,14 +14,10 @@ getgenv().Configuration = {
         "Primal Egg",
         "Dinosaur Egg",
         "Bug Egg",
-        "Anti Bee Egg",
         "Paradise Egg",
-        "Night Egg",
         "Rare Summer Egg",
-        "Oasis Egg",
         "Mythical Egg",
         "Bee Egg",
-        "Rare Egg",
         "Common Summer Egg",
         
         
@@ -109,7 +105,6 @@ getgenv().Configuration = {
         "Parasaurolophus",
         "Iguanodon",
         "Pachycephalosaurus",
-        "Dilophosaurus",
         "Scarlet Macaw",
         "Squirrel",
         "Snail", 
@@ -126,7 +121,6 @@ getgenv().Configuration = {
         "Grey Mouse",
         "Caterpillar",
         "Starfish",
-        "Ostrich",
         "Dog",
         "Golden Lab",
         "Bunny",
@@ -184,7 +178,7 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
-        { Name = "Ancient Seed Pack", Amount = 1 },
+        { Name = "Ancient Seed Pack", Amount = 4 },
         
     },
 
@@ -193,14 +187,14 @@ getgenv().Configuration = {
         { Name = "Bald Eagle", Amount = 200 },
     },
 
-    SELL_PET_MIN_COUNT = 2, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
-    SELL_PET_KEEP_COUNT = 1, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
+    SELL_PET_MIN_COUNT = 3, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 10, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 15, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
     TakeAncientPlant = true, -- true/false เปิด Take Ancient Plant
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
@@ -217,7 +211,7 @@ getgenv().Configuration = {
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX",},
     CollectBatch = 5, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 50000000, Minutes = 15 },
+        { Money = 50000000, Minutes = 10 },
         { Money = 0, Minutes = 1 },
     },
 }
