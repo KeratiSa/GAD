@@ -34,7 +34,7 @@ getgenv().Configuration = {
         "Dinosaur Egg",
         "Rare Egg",
         "Common Summer Egg",
-        "Common Egg",
+        --"Common Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Blood Kiwi", 
