@@ -50,17 +50,38 @@ local function checkAndSend()
     if success then
         local dataTable = dataResult.Table
         if dataTable and dataTable.PlayerPetData then
-            local playerName = Players.LocalPlayer.Name
+            local player = Players.LocalPlayer
+            if not player then
+                warn("LocalPlayer ยังไม่พร้อม")
+                return
+            end
+
+            local playerName = player.Name
             local playerPetData = dataTable.PlayerPetData[playerName]
             if playerPetData then
                 local petInventory = playerPetData['PetInventory']
                 if petInventory and petInventory['Data'] then
                     local petData = petInventory['Data']
+
+                    -- รายชื่อสัตว์ที่ไม่ต้องส่ง Webhook
+                    local blacklist = {
+                        ["Starfish"] = true,
+                        ["Bunny"] = true,
+                        ["Squirrel"] = true,
+                        ["Golden Lab"] = true
+                    }
+
                     for _, v in pairs(petData) do
+                        local petType = v.PetType or "Unknown"
+
+                        -- ข้ามสัตว์ที่อยู่ใน blacklist
+                        if blacklist[petType] then
+                            continue
+                        end
+
                         local baseWeight = v.PetData.BaseWeight or 1
                         local level = v.PetData.Level or 1
                         local weight = PetUtilities:CalculateWeight(baseWeight, level)
-                        local petType = v.PetType or "Unknown"
 
                         if weight >= 20 then
                             sendDiscordEmbed(
@@ -86,8 +107,9 @@ local function checkAndSend()
     end
 end
 
--- Loop ยิง webhook ทุก 500 วินาที
+-- Loop ยิง webhook ทุก 1500 วินาที (25 นาที)
 while true do
+    print("[Pet Monitor] Checking pets at:", os.date("%Y-%m-%d %H:%M:%S"))
     checkAndSend()
-    task.wait(1500) -- รอ 500 วิ ก่อนรอบถัดไป
+    task.wait(1500)
 end
