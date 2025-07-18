@@ -6,30 +6,8 @@ getgenv().Configuration = {
         "Paradise Petal",
         "Boneboo",
         "Firefly Fern",
-        "Bamboo",
-        "Carrot",
-        "Orange Tulip",
-        "Watermelon",
-        "Pumpkin",
-        "Daffodil",
-        "Mushroom",
-        "Beanstalk",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
-        "Stonebite",
-        "Paradise Petal",
-        "Horned Dinoshroom",
-        "Boneboo",
-        "Firefly Fern",
-        "Bamboo",
-        "Carrot",
-        "Orange Tulip",
-        "Watermelon",
-        "Pumpkin",
-        "Daffodil",
-        "Mushroom",
-        "Nightshade",
-        "Beanstalk",
 
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
@@ -220,7 +198,7 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 30, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 10, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
     TakeAncientPlant = true, -- true/false เปิด Take Ancient Plant
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
