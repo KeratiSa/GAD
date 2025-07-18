@@ -178,7 +178,7 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
-        { Name = "Ancient Seed Pack", Amount = 4 },
+        { Name = "Ancient Seed Pack", Amount = 10 },
         
     },
 
