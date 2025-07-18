@@ -11,13 +11,13 @@ getgenv().Configuration = {
 
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
-        --"Primal Egg",
-        --"Dinosaur Egg",
-        --"Bug Egg",
-        --"Paradise Egg",
-        --"Rare Summer Egg",
-        --"Mythical Egg",
-        --"Bee Egg",
+        "Primal Egg",
+        "Dinosaur Egg",
+        "Bug Egg",
+        "Paradise Egg",
+        "Rare Summer Egg",
+        "Mythical Egg",
+        "Bee Egg",
         "Common Summer Egg",
         "Common Egg",
     },
@@ -178,7 +178,7 @@ getgenv().Configuration = {
 
     Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
         { Name = "Anti Bee Egg", Amount = 200 },
-        { Name = "Ancient Seed Pack", Amount = 10 },
+        { Name = "Ancient Seed Pack", Amount = 2 },
         
     },
 
@@ -187,7 +187,7 @@ getgenv().Configuration = {
         { Name = "Bald Eagle", Amount = 200 },
     },
 
-    SELL_PET_MIN_COUNT = 3, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_MIN_COUNT = 2, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 2, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
@@ -198,7 +198,7 @@ getgenv().Configuration = {
     TakeAncientPlant = true, -- true/false เปิด Take Ancient Plant
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
-    UpgradePetInventory = false, -- true/false เปิด Auto Upgrade Pet Inventory
+    UpgradePetInventory = true, -- true/false เปิด Auto Upgrade Pet Inventory
     SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนั
     OpenFlowerSeedPack = 1, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
