@@ -15,11 +15,11 @@ getgenv().Configuration = {
         "Dinosaur Egg",
         "Bug Egg",
         "Paradise Egg",
-        "Rare Summer Egg",
+        --"Rare Summer Egg",
         "Mythical Egg",
         "Bee Egg",
         "Common Summer Egg",
-        "Common Egg",
+        --"Common Egg",
     },
    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -34,7 +34,7 @@ getgenv().Configuration = {
         "Dinosaur Egg",
         "Rare Egg",
         "Common Summer Egg",
-        --"Common Egg",
+        "Common Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
         "Blood Kiwi", 
