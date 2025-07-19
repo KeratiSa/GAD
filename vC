@@ -20,7 +20,7 @@ getgenv().Configuration = {
         "Mushroom",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
-        "Legendary Egg",
+        --"Legendary Egg",
         "Mythical Egg",
         "Bug Egg",
         "Night Egg",
@@ -28,7 +28,7 @@ getgenv().Configuration = {
         "Anti Bee Egg",
         "Paradise Egg",
         "Dinosaur Egg",
-        "Common Summer Egg",
+        --"Common Summer Egg",
         "Zen Egg",
     },
     BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
