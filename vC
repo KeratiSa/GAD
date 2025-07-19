@@ -1,27 +1,26 @@
+-- Config Update 19/07/25 22:46
 repeat wait() until game:IsLoaded()
-task.wait(15)-- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+task.wait(10) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
-        "Stonebite",
-        "Paradise Petal",
-        "Boneboo",
-        "Firefly Fern",
+        "Bamboo",
+        "Carrot",
+        "Orange Tulip",
+        "Watermelon",
+        "Pumpkin",
+        "Daffodil",
+        "Mushroom",
     },
     BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
-
+        "Bamboo",
+        "Carrot",
+        "Orange Tulip",
+        "Watermelon",
+        "Pumpkin",
+        "Daffodil",
+        "Mushroom",
     },
     EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
-        "Primal Egg",
-        "Dinosaur Egg",
-        "Bug Egg",
-        "Paradise Egg",
-        "Rare Summer Egg",
-        "Mythical Egg",
-        "Bee Egg",
-        "Common Summer Egg",
-        "Common Egg",
-    },
-   BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
         "Mythical Egg",
         "Bug Egg",
@@ -29,189 +28,138 @@ getgenv().Configuration = {
         "Bee Egg",
         "Anti Bee Egg",
         "Paradise Egg",
-        "Rare Summer Egg",
-        "Common Summer Egg",
         "Dinosaur Egg",
-        "Rare Egg",
         "Common Summer Egg",
-        "Common Egg",
+    },
+    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
+        "Legendary Egg",
+        "Mythical Egg",
+        "Bug Egg",
+        "Bee Egg",
+        "Paradise Egg",
+        "Common Summer Egg",
     },
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
-        "Blood Kiwi", 
-        "Seal",
-        "Ostrich",
-        "Starfish",
-        "Bald Eagle",
+                        "Starfish",
+                        "Ostrich",
+    },
+    SELL_PET = { -- กำหนดชื่อ pet ที่ต้องการขาย
+                    "Bee",
+                    "Snail",
+                    "Squirrel",
+                    "Scarlet Macaw",
+                    "Snail",
+                    "Giant Ant",
+                    "Praying Mantis",
+                    "Orangutan",
+                    "Grey Mouse",
+                    "Caterpillar",
+                    "Starfish",
+                    "Dog",
+                    "Golden Lab",
+                    "Bunny",
+                    "Black Bunny",
+                    "Cat",
+                    "Orange Tabby",
+                    "Deer",
+                    "Spotted Deer",
+                    "Monkey",
+                    "Silver Monkey",
+                    "Pig",
+                    "Turtle",
+                    "Cow",
+                    "Polar Bear",
+                    "Panda",
+                    "Sea Otter",
+                    "Hedgehog",
+                    "Mole",
+                    "Frog",
+                    "Brown Mouse",
+                    "Red Giant Ant",
+                    "Honey Bee",
+                    "Chicken",
+                    "Rooster",
+                    "Kiwi",
+                    "Wasp",
+                    "Tarantula Hawk",
+                    "Sea Turtle",
+                    "Moon Cat",
+                    "Peacock",
+                    "Seagull",
+                    "Crab",
+                    "Sand Snake",
+                    "Meerkat",
+                    "Axolotl",
+                    "Ostrich",
+                    "Toucan",
+                    "Capybara",
+                    "Blood Kiwi",
+                    "Pterodactyl",
+                    "Stegosaurus",
+                    "Triceratops",
+                    "Raptor",
+                    "Flamingo",
+                    "Spotted Deer",
+                    "Pig",
+                    "Rooster",
+                    "Monkey",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
-        "Bee",
-        "Seal",
-        "Honey Bee",
-        "Chicken",
-        "Rooster",
-        "Kiwi",
-        "Wasp",
-        "Tarantula Hawk",
-        "Starfish",
-        "Ostrich",
+                        "Starfish",
+                        "Ostrich",
     },
-    SELL_PET = {
-        -- กำหนดชื่อ pet ที่ต้องการขาย
-        "Dog",
-        "Golden Lab",
-        "Bunny",
-        "Black Bunny",
-        "Cat",
-        "Orange Tabby",
-        "Deer",
-        "Spotted Deer",
-        "Monkey",
-        "Silver Monkey",
-        "Pig",
-        "Turtle",
-        "Cow",
-        "Polar Bear",
-        "Panda",
-        "Sea Otter",
-        "Hedgehog",
-        "Mole",
-        "Frog",
-        "Honey Bee",
-        "Chicken",
-        "Rooster",
-        "Kiwi",
-        "Wasp",
-        "Tarantula Hawk",
-        "Moon Cat",
-        "Peacock",
-        "Seagull",
-        "Crab",
-        "Sand Snake",
-        "Meerkat",
-        "Axolotl",
-        "Toucan",
-        "Blood Kiwi",
-        "Pterodactyl",
-        "Stegosaurus",
-        "Triceratops",
-        "Raptor",
-        "Flamingo",
-        "Spotted Deer",
-        "Pig",
-        "Orange Tabby",
-        "Monkey",
-        "Parasaurolophus",
-        "Iguanodon",
-        "Pachycephalosaurus",
-        "Scarlet Macaw",
-        "Snail", 
-    },
-    PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
-        "Bee",
-        "Snail",
-        "Squirrel",
-        "Scarlet Macaw",
-        "Snail",
-        "Giant Ant",
-        "Praying Mantis",
-        "Orangutan",
-        "Grey Mouse",
-        "Caterpillar",
-        "Starfish",
-        "Dog",
-        "Golden Lab",
-        "Bunny",
-        "Black Bunny",
-        "Cat",
-        "Orange Tabby",
-        "Deer",
-        "Spotted Deer",
-        "Monkey",
-        "Silver Monkey",
-        "Pig",
-        "Turtle",
-        "Cow",
-        "Polar Bear",
-        "Panda",
-        "Sea Otter",
-        "Hedgehog",
-        "Mole",
-        "Frog",
-        "Brown Mouse",
-        "Red Giant Ant",
-        "Honey Bee",
-        "Chicken",
-        "Rooster",
-        "Kiwi",
-        "Wasp",
-        "Tarantula Hawk",
-        "Sea Turtle",
-        "Moon Cat",
-        "Peacock",
-        "Seagull",
-        "Crab",
-        "Sand Snake",
-        "Meerkat",
-        "Axolotl",
-        "Ostrich",
-        "Toucan",
-        "Capybara",
-        "Blood Kiwi",
-        "Pterodactyl",
-        "Stegosaurus",
-        "Triceratops",
-        "Raptor",
-        "Flamingo",
-        "Spotted Deer",
-        "Pig",
-        "Rooster",
-        "Monkey",
-    },
-    PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
-    },
+
     BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
+    },
+
+    PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
 
     },
 
-    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Even
-        { Name = "Anti Bee Egg", Amount = 200 },
-        { Name = "Ancient Seed Pack", Amount = 2 },
-        
+    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Event
+        { Name = "Anti Bee Egg", Amount = 2 },
     },
 
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
-        { Name = "Summer Seed Pack", Amount = 2000 },
-        { Name = "Bald Eagle", Amount = 200 },
+        { Name = "Zen Egg", Amount = 100 },
     },
 
-    SELL_PET_MIN_COUNT = 1, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_MIN_COUNT = 2, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
     SELL_PET_KEEP_COUNT = 1, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
+    SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนัก
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 15, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
-    TakeAncientPlant = true, -- true/false เปิด Take Ancient Plant
+    MaxCropInFarm = 80, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
     UpgradePetInventory = true, -- true/false เปิด Auto Upgrade Pet Inventory
-    SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนั
-    OpenFlowerSeedPack = 1, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
+
+    TakeEventPlant = true, -- true/false เปิด Take Event Plant
+
     AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
-    AutoEvent = true, -- true/false เปิด ส่ง Event
     AutoFavEvent = true, -- true/false เปิด Auto Fav Event
-    OPEN_SEEDPACK = true, -- true/false เปิด Night Seed Pack
-    MoneyEnough = 5000000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+    OPEN_SEEDPACK = true, -- true/false เปิด Seed Pack
+
+    OpenFlowerSeedPack = 30, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
+
+    MoneyEnough = 100000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+
     Fpsboost = true, -- true/false เปิด Fpsboost
-    WEBHOOK_URL = "https://discord.com/api/webhooks/1142855646396555424/cxsQLnHUXhsSB_DmPIp7rNfTBJVnwNTvoZ69MefrzzJqDXDEwFLjQbN0J_vu3TE-6hU8",     
-    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX",},
-    CollectBatch = 5, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
+
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1145402547583066163/kCV_GZ2WG_fYJNF5iDjoJx2EK7bb7UCSgRTcMqC4w1BbmepopDorlm_xRwqr46S34v_D", -- Webhook ที่จะส่งไปที่ Discord
+    NOTIFY_PETWEIGHT = 5, -- น้ำหนักของ Pet
+    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX" , "Kitsune" },
+
+    CollectBatch = 20, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
+
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 50000000, Minutes = 10 },
+        { Money = 100000, Minutes = 20 },
         { Money = 0, Minutes = 1 },
     },
 }
-
 script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
