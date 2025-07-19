@@ -125,7 +125,7 @@ getgenv().Configuration = {
     },
 
     SELL_PET_MIN_COUNT = 2, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
-    SELL_PET_KEEP_COUNT = 1, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
+    SELL_PET_KEEP_COUNT = 0, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
     SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนัก
 
     OpenEgg = true, -- true/false เปิด Auto Open Egg
@@ -136,7 +136,7 @@ getgenv().Configuration = {
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
-    UpgradePetInventory = true, -- true/false เปิด Auto Upgrade Pet Inventory
+    UpgradePetInventory = false, -- true/false เปิด Auto Upgrade Pet Inventory
 
     TakeEventPlant = true, -- true/false เปิด Take Event Plant
 
