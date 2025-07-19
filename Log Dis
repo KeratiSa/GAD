@@ -10,7 +10,7 @@ local ReplicationClass = require(ReplicatedStorage.Modules.ReplicationClass)
 
 local ActivePetsService = ReplicationClass.new("ActivePetsService_Replicator")
 
-local webhookUrl = "https://discord.com/api/webhooks/1395133707190276197/EwuL-e-5KhCz4g7mHXddtTQKb8DGAqu4XJLk06GjANJpyFxJzyhmL5AKxu0YX6df5lEN"
+local webhookUrl = "https://discord.com/api/webhooks/1181041472104042597/1uuj--WuCjXuTxdCXtl7OCrTiRCI5vCuHTeyLG3TzlaJkV0Z1XTUH9VDAPiEHGz-AO-p"
 
 local function sendDiscordEmbed(title, description)
     local embed = {{
