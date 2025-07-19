@@ -1,6 +1,5 @@
--- Config Update 19/07/25 22:46
 repeat wait() until game:IsLoaded()
-task.wait(10) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+task.wait(20) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
 getgenv().Configuration = {
     SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Bamboo",
@@ -30,6 +29,7 @@ getgenv().Configuration = {
         "Paradise Egg",
         "Dinosaur Egg",
         "Common Summer Egg",
+        "Zen Egg",
     },
     BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
         "Legendary Egg",
@@ -152,12 +152,13 @@ getgenv().Configuration = {
 
     WEBHOOK_URL = "https://discord.com/api/webhooks/1145402547583066163/kCV_GZ2WG_fYJNF5iDjoJx2EK7bb7UCSgRTcMqC4w1BbmepopDorlm_xRwqr46S34v_D", -- Webhook ที่จะส่งไปที่ Discord
     NOTIFY_PETWEIGHT = 5, -- น้ำหนักของ Pet
+    NOTIFY_SEEDS = { "Mable Apple" },
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX" , "Kitsune" },
 
     CollectBatch = 20, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 100000, Minutes = 20 },
+        { Money = 100000, Minutes = 15 },
         { Money = 0, Minutes = 1 },
     },
 }
