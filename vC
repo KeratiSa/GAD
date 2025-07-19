@@ -76,8 +76,6 @@ getgenv().Configuration = {
         "Hedgehog",
         "Mole",
         "Frog",
-        "Brown Mouse",
-        "Red Giant Ant",
         "Honey Bee",
         "Chicken",
         "Rooster",
@@ -106,7 +104,6 @@ getgenv().Configuration = {
         "Iguanodon",
         "Pachycephalosaurus",
         "Scarlet Macaw",
-        "Squirrel",
         "Snail", 
     },
     PetDino = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Evo
