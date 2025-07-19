@@ -132,7 +132,7 @@ getgenv().Configuration = {
     PlaceEgg = true, -- true/false เปิด Auto Place Egg
     BuyEgg = true, -- true/false เปิด Auto Buy Egg
 
-    MaxCropInFarm = 60, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+    MaxCropInFarm = 50, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
 
     UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
     UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
@@ -158,7 +158,7 @@ getgenv().Configuration = {
     CollectBatch = 5, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 100000, Minutes = 15 },
+        { Money = 100000, Minutes = 10 },
         { Money = 0, Minutes = 1 },
     },
 }
