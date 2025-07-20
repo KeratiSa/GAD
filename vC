@@ -156,10 +156,10 @@ getgenv().Configuration = {
     NOTIFY_SEEDS = { "Mable Apple" },
     NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX" , "Kitsune" },
 
-    CollectBatch = 5, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
+    CollectBatch = 10, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
 
     COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
-        { Money = 100000, Minutes = 10 },
+        { Money = 100000, Minutes = 20 },
         { Money = 0, Minutes = 1 },
     },
 }
