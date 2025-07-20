@@ -43,6 +43,7 @@ getgenv().Configuration = {
     PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
                         "Starfish",
                         "Ostrich",
+                        "Tanchozuru",
     },
     SELL_PET = { -- กำหนดชื่อ pet ที่ต้องการขาย
                     "Bee",
