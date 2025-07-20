@@ -1,94 +1,7 @@
-if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
-getgenv().Script_Mode = "Kaitun_Script"
-_G.Settings = {
-    PlantSettings = {
-        Limit = 80,
-        Plant = {
-            ["Carrot"] = 50,
-            ["Bamboo"] = 50,
-            ["Watermelon"] = 50,
-            ["Orange Tulip"] = 50,
-            ["Pumpkin"] = 50,
-            ["Daffodil"] = 50,
-            ["Mushroom"] = 50,
-        },
-        Destroy = {
-            WhenMoney = 50000,
-            Plant = {
-            "Strawberry",
-            "Blueberry",
-            "Corn",
-            "Raspberry",
-            "Pear",
-            "Apple",
-            "Grape",
-            "Cucumber",
-            "Succulent",
-            "Lumira", 
-            "Lilac",
-            "Violet Corn",
-            "Nectar Thorn", 
-            "Cocovine",
-            "Pink Lily",
-            "Purple Dahlia",
-            "Ember Lily", 
-            "Dragon Fruit",
-            "Mango", 
-            "Peach",
-            "Cactus", 
-            "Coconut", 
-            "Nectarine",
-            "Loquat", 
-            "Sunflower", 
-            "Dragon Pepper",
-            "Cacao",
-            "Hive Fruit",
-            "Beanstalk", 
-            "Suncoil", 
-            "Glowshroom",
-            "Mint", 
-            "Cranberry", 
-            "Durian", 
-            "Easter Egg",
-            "Papaya",
-            "Celestiberry",
-            "Blood Banana",
-            "Moon Melon", 
-            "Eggplant",
-            "Passionfruit",
-            "Lemon",
-            "Banana",
-            "Cherry Blossom",
-            "Crimson Vine",
-            "Lotus",
-            "Venus Fly Trap",
-            "Cursed Fruit",
-            "Soul Fruit", 
-            "Moon Blossom", 
-            "Moon Mango",
-            "Moonflower",
-            "Starfruit",
-            "Crocus", 
-            "Manuka Flower",
-            "Lavender", 
-            "Dandelion", 
-            "Chocolate Carrot", 
-            "Red Lollipop",
-            "Nightshade", 
-            "Candy Sunflower", 
-            "Rose",
-            "Foxglove",
-            "Lilac",
-            "Pink Lily",
-            "Horned Dinoshroom",
-		    "Stonebite",
-		    "Paradise Petal",
-		    "Boneboo",
-		    "Firefly Fern",
-            }
-        }
-    },
-    SeedsSetting = {
+repeat wait() until game:IsLoaded()
+task.wait(20) -- ระยะเวลารอ ถ้าเปิดหลายจอเเนะนำให้ตั้งเป็น 20 วิ
+getgenv().Configuration = {
+    SEEDS = { -- กำหนด Seed ที่ต้องการให้ Farm
         "Bamboo",
         "Carrot",
         "Orange Tulip",
@@ -97,27 +10,41 @@ _G.Settings = {
         "Daffodil",
         "Mushroom",
     },
-    EggSettings = {
-        StartBuyEggWhen = 150000,
-        SelectEggs = {
+    BuySeed = { -- กำหนด Seed ที่ต้องการซื้อจาก Seed Shop
+        "Bamboo",
+        "Carrot",
+        "Orange Tulip",
+        "Watermelon",
+        "Pumpkin",
+        "Daffodil",
+        "Mushroom",
+    },
+    EGG = { -- กำหนด Egg ที่ต้องการให้ Farm
         --"Legendary Egg",
-        --"Mythical Egg",
-        --"Bug Egg",
+        "Mythical Egg",
+        "Bug Egg",
         --"Night Egg",
         --"Bee Egg",
         --"Anti Bee Egg",
-        --"Paradise Egg",
+        "Paradise Egg",
         "Dinosaur Egg",
         "Primal Egg",
         --"Common Summer Egg",
         "Zen Egg",
-        },
     },
-    Webhook = "",
-    UpgradeEggSlots = 2,
-    UpgradePetSlots = 2,
-    PetSettings = {
-        Sell = {
+    BUYEGG = { -- กำหนด Egg ที่ต้องการซื้อจาก Egg Shop
+        "Legendary Egg",
+        "Mythical Egg",
+        "Bug Egg",
+        "Bee Egg",
+        "Paradise Egg",
+        "Common Summer Egg",
+    },
+    PET_NAME = { -- กำหนกดชื่อ pet ที่ต้องการนำใส่ฟาร๋ม
+                        "Starfish",
+                        "Ostrich",
+    },
+    SELL_PET = { -- กำหนดชื่อ pet ที่ต้องการขาย
                     "Bee",
                     "Snail",
                     "Squirrel",
@@ -177,51 +104,64 @@ _G.Settings = {
                     "Pig",
                     "Rooster",
                     "Monkey",
-        },
-        UpgradeSlots = {
-            "Starfish",
-            "Ostrich",
-            "Seal",
-        },
-        Equip = {
-                "Starfish",
-                "Ostrich",
-                "Seal",
-                "Tanchozuru",
-        },
-        Lock = {
-            Weight = 5,
-            Enabled = true
-        }
     },
-    CraftSettings = {
-        Enabled = true,
-        Workbench = "Anti Bee Egg",
-        SeedEventWorkbench = ""
+    PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
+                        "Starfish",
+                        "Ostrich",
     },
-    ZenEvents = {
-        TakeAllTranquilPlants = true,
-        TradeChi = {
-            Enabled = true,
-            MaxChi =  20
-        }
-    },
-    StockBuy = {
-        GearStocksBuy = {""},
-        ZenItems = {"Zen Egg"}
-    },
-    SprinklerSettings = {
-        PlaceManage = {
 
-        }
+    BUY_GEAR = { -- กำหนด Item ที่ต้องการซื้อจาก Gear Shop
     },
-    UseSeedPack = true,
-    CropSettings = {
-        ['DelayTime'] = 600,
-        ['TimeCrop'] = 120
-    }
+
+    PetMutation = { -- กำหนดชื่อ Pet ที่ต้องการใช้ในการ Mutation
+
+    },
+
+    Craft_Event = { -- กำหนด Item ที่ต้องการ Craft ใน Event
+        { Name = "Anti Bee Egg", Amount = 2 },
+    },
+
+    EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
+        { Name = "Zen Egg", Amount = 10000 },
+    },
+
+    SELL_PET_MIN_COUNT = 1, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
+    SELL_PET_KEEP_COUNT = 0, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet
+    SELL_PET_KEEP_WEIGHT = 5, -- จำนวน Pet ที่จะเก็บไว้เมื่อขาย Pet ตามน้ำหนัก
+
+    OpenEgg = true, -- true/false เปิด Auto Open Egg
+    PlaceEgg = true, -- true/false เปิด Auto Place Egg
+    BuyEgg = true, -- true/false เปิด Auto Buy Egg
+
+    MaxCropInFarm = 50, -- จำนวน Crop ที่ต้องการปลูกในฟาร์ม
+
+    UpgradePetSlot = true, -- true/false เปิด Auto Upgrade Pet Slot
+    UpgradeEggSlot = true, -- true/false เปิด Auto Upgrade Egg Slot
+    UpgradePetInventory = false, -- true/false เปิด Auto Upgrade Pet Inventory
+
+    TakeEventPlant = true, -- true/false เปิด Take Event Plant
+
+    AUTOFEEDPETS = true, -- true/false เปิด Auto Feed Pet
+    AutoFavEvent = true, -- true/false เปิด Auto Fav Event
+    OPEN_SEEDPACK = true, -- true/false เปิด Seed Pack
+
+    OpenFlowerSeedPack = 30, -- ถ้ามี Flower Seed Pack มากกว่าเท่าไหร่ถึงจะเปิด
+
+    MoneyEnough = 100000, -- ต้องมีเงินมากกว่าเท่าไหร่ถึงจะซื้อ Egg and Item
+
+    Fpsboost = true, -- true/false เปิด Fpsboost
+
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1145402547583066163/kCV_GZ2WG_fYJNF5iDjoJx2EK7bb7UCSgRTcMqC4w1BbmepopDorlm_xRwqr46S34v_D", -- Webhook ที่จะส่งไปที่ Discord
+    NOTIFY_PETWEIGHT = 5, -- น้ำหนักของ Pet
+    NOTIFY_SEEDS = { "Mable Apple" },
+    NOTIFY_PETS = { "Dragonfly", "Raccoon", "Red Fox", "Disco Bee", "Queen Bee", "Mimic Octopus", "T-REX" , "Kitsune" },
+
+    CollectBatch = 10, -- จำนวนการเก็บของในฟาร์มต่อครั้ง
+
+    COLLECT_MINUTES = { -- กำหนดเวลาในการเก็บของในฟาร์ม ตามจำนวนเงินที่มี
+        { Money = 100000, Minutes = 20 },
+        { Money = 0, Minutes = 1 },
+    },
 }
-getgenv().Key = "MARU-F0K7-FW2TG-QOHC-3A7WQ-RKO8"
-getgenv().id = "363593020811247618"
-getgenv().Script_Mode = "Kaitun_Script"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/xshiba/MaruBitkub/main/Mobile.lua"))()
+script_key="poXxwoOXifupROYeAcYexuXPvbrLtdYv";
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/a30dea03b26012f29a97cd81cda4083a.lua"))()
