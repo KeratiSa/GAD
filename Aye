@@ -1,13 +1,12 @@
 task.wait(10)
 getgenv().ConfigsKaitun = {
-	["Low Cpu"] = true,
+	["Low Cpu"] = false,
 
 	["Rejoin When Update"] = false,
 	
 	["Limit Tree"] = {
 		["Limit"] = 100,
-		["Destroy Untill"] = 100,
-		
+		["Destroy Untill"] = 80,
 		["Safe Tree"] = {
 			"Moon Blossom",
 			"Bone Blossom",
