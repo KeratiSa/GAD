@@ -2,15 +2,9 @@ if not game:IsLoaded() then repeat game.Loaded:Wait() until game:IsLoaded() end
 getgenv().Script_Mode = "Kaitun_Script"
 _G.Settings = {
     PlantSettings = {
-        Limit = 100,
+        Limit = 1,
         Plant = {
             ["Carrot"] = 50,
-            ["Bamboo"] = 50,
-            ["Watermelon"] = 50,
-            ["Orange Tulip"] = 50,
-            ["Pumpkin"] = 50,
-            ["Daffodil"] = 50,
-            ["Mushroom"] = 50,
         },
         Destroy = {
             WhenMoney = 50000,
