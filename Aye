@@ -1,6 +1,6 @@
 task.wait(10)
 getgenv().ConfigsKaitun = {
-	["Low Cpu"] = false,
+	["Low Cpu"] = true,
 
 	["Rejoin When Update"] = false,
 	
