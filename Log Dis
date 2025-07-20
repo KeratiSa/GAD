@@ -1,5 +1,5 @@
 repeat wait() until game:IsLoaded()
-task.wait(20) -- ระยะเวลารอ ถ้าเปิดหลายจอแนะนำให้ตั้งเป็น 20 วิ
+task.wait(20)
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -7,16 +7,19 @@ local HttpService = game:GetService("HttpService")
 
 local PetUtilities = require(ReplicatedStorage.Modules.PetServices.PetUtilities)
 local ReplicationClass = require(ReplicatedStorage.Modules.ReplicationClass)
-
 local ActivePetsService = ReplicationClass.new("ActivePetsService_Replicator")
 
-local webhookUrl = "https://discord.com/api/webhooks/1181041472104042597/1uuj--WuCjXuTxdCXtl7OCrTiRCI5vCuHTeyLG3TzlaJkV0Z1XTUH9VDAPiEHGz-AO-p"
+local webhookUrl = _G.Config.web_hook or ""
+local PC_NAME = _G.Config.PC or "Unknown"
 
-local function sendDiscordEmbed(title, description)
+local function sendDiscordEmbed(title, playerName, petType, weight, level)
     local embed = {{
         title = title,
-        description = description,
-        color = 0x1abc9c, -- สีเขียวสวย
+        description = string.format(
+            "💻:%s\n\nผู้เล่น: %s\nประเภทสัตว์: %s\nน้ำหนัก: %.2f\nอายุ (Level): %d",
+            PC_NAME, playerName, petType, weight, level
+        ),
+        color = 0x1abc9c,
         timestamp = os.date("!%Y-%m-%dT%H:%M:%SZ"),
         footer = {
             text = "Roblox Pet Monitor"
@@ -26,6 +29,7 @@ local function sendDiscordEmbed(title, description)
     local payload = {
         embeds = embed
     }
+
     local jsonData = HttpService:JSONEncode(payload)
 
     local response = http_request({
@@ -62,19 +66,11 @@ local function checkAndSend()
                 local petInventory = playerPetData['PetInventory']
                 if petInventory and petInventory['Data'] then
                     local petData = petInventory['Data']
-
-                    -- รายชื่อสัตว์ที่ไม่ต้องส่ง Webhook
-                    local blacklist = {
-                        ["Starfish"] = true,
-                        ["Bunny"] = true,
-                        ["Squirrel"] = true,
-                        ["Golden Lab"] = true
-                    }
+                    local blacklist = {}
 
                     for _, v in pairs(petData) do
                         local petType = v.PetType or "Unknown"
 
-                        -- ข้ามสัตว์ที่อยู่ใน blacklist
                         if blacklist[petType] then
                             continue
                         end
@@ -84,21 +80,9 @@ local function checkAndSend()
                         local weight = PetUtilities:CalculateWeight(baseWeight, level)
 
                         if weight >= 20 then
-                            sendDiscordEmbed(
-                                "⚠️ เจอสัตว์น้ำหนักมาก!",
-                                string.format(
-                                    "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
-                                    playerName, petType, weight, level
-                                )
-                            )
+                            sendDiscordEmbed("⚠️ เจอสัตว์น้ำหนักมาก!", playerName, petType, weight, level)
                         elseif (weight > 5 and level <= 10) or (weight > 10 and level <= 39) then
-                            sendDiscordEmbed(
-                                "🐾 สัตว์เข้าเงื่อนไข",
-                                string.format(
-                                    "**ผู้เล่น:** %s\n**ประเภทสัตว์:** %s\n**น้ำหนัก:** %.2f\n**อายุ (Level):** %d",
-                                    playerName, petType, weight, level
-                                )
-                            )
+                            sendDiscordEmbed("🐾 สัตว์เข้าเงื่อนไข", playerName, petType, weight, level)
                         end
                     end
                 end
@@ -107,9 +91,8 @@ local function checkAndSend()
     end
 end
 
--- Loop ยิง webhook ทุก 1500 วินาที (25 นาที)
 while true do
     print("[Pet Monitor] Checking pets at:", os.date("%Y-%m-%d %H:%M:%S"))
     checkAndSend()
-    task.wait(1500)
+    task.wait(1500) -- 25 นาที
 end
