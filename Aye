@@ -1,0 +1,222 @@
+task.wait(10)
+getgenv().ConfigsKaitun = {
+	["Low Cpu"] = true,
+
+	["Rejoin When Update"] = false,
+	
+	["Limit Tree"] = {
+		["Limit"] = 100,
+		["Destroy Untill"] = 100,
+		
+		["Safe Tree"] = {
+			"Moon Blossom",
+			"Bone Blossom",
+			"Moon Melon",
+			"Fossilight"
+		}
+	},
+
+	Seed = {
+		Buy = {
+			Mode = "Custom", -- Custom , Auto
+			Custom = {
+        		"Bamboo",
+        		"Carrot",
+       		 	"Orange Tulip",
+        		"Watermelon",
+        		"Pumpkin",
+        		"Daffodil",
+        		"Mushroom",
+			}
+		},
+		Place = {
+			Mode = "Select", -- Select , Lock
+			Select = {
+				        "Bamboo",
+        				"Carrot",
+        				"Orange Tulip",
+        				"Watermelon",
+        				"Pumpkin",
+        				"Daffodil",
+        				"Mushroom",
+			},
+			Lock = {
+				"Sunflower",
+				"Sugar Apple",
+				"Elephant Ears",
+				"Dragon Pepper",
+				"Burning Bud",
+				"Ember Lily",
+				"Beanstalk",
+				"Feijoa",
+				"Cacao",
+				"Pepper",
+				"Mushroom",
+				"Loquat",
+				"Fossilight",
+				"Maple Apple",
+				"Hinomai",
+				"Fossilight",
+				"Zen Rocks",
+				"Giant Pinecone",
+				"Grand Volcania",
+				"Bone Blossom"
+			}
+		}
+	},
+	
+	["Seed Pack"] = {
+		Locked = {
+			
+		}
+	},
+	
+	Events = {
+		["Traveling Shop"] = {
+                        "Bee Egg",
+                        "Night Staff",
+                        "Star Caller",
+		},
+		Craft = {
+			"Ancient Seed Pack",
+			"Anti Bee Egg",
+			"Primal Egg",
+		},
+		Shop = {
+			"Zen Egg",
+			--"Koi",
+		}
+	},
+	
+	Gear = {
+		Buy = { 
+
+		},
+		Lock = {
+
+		},
+	},
+
+	Eggs = {
+		Place = {
+			"Zen Egg",
+			"Primal Egg",
+			"Dinosaur Egg",
+			"Oasis Egg",
+			"Anti Bee Egg",
+			"Night Egg",
+			"Legendary Egg",
+			"Bug Egg",
+			"Paradise Egg",
+			"Bee Egg",
+			"Rare Summer Egg",
+			"Mythical Egg",
+		},
+		Buy = {
+			"Zen Egg",
+			"Primal Egg",
+			"Night Egg",
+			"Bug Egg",
+			"Anti Bee Egg",
+			"Dinosaur Egg",
+			"Oasis Egg",
+			"Paradise Egg",
+			"Mythical Egg",
+			"Legendary Egg",
+			"Bee Egg",
+			"Rare Summer Egg",
+			"Common Summer Egg",
+			"Rare Egg",
+			"Uncommon Egg",
+			"Common Egg"
+		}
+	},
+	
+	Pets = {
+		["Start Delete Pet At"] = 40,
+		["Upgrade Slot"] = {
+			["Pet"] = {
+				"Starfish",
+			},
+			["Limit Upgrade"] = 3,
+			["Equip When Done"] = {
+				"Capybara",
+				"Ostrich",
+				"Starfish",
+				"Tanchozuru",
+			},
+		},
+		Locked = {
+			"Disco Bee",
+			"Butterfly",
+			"Mimic Octopus",
+			"Queen Bee",
+			"Dragonfly",
+			"Raccoon",
+			"Red Fox",
+			"Fennec Fox",
+			"Bald Eagle",
+			"T-Rex",
+			"Brontosaurus",
+			"Spinosaurus",
+			"Ankylosaurus",
+			"Kitsune",
+			"Dilophosaurus",
+			["Bald Eagle"] = 5,
+			["Moon Cat"] = 10,
+			["Chicken"] = 2,
+			["Rooster"] = 4,
+			["Blood Kiwi"] = 5,
+			["Ostrich"] = 2,
+			["Capybara"] = 2,
+			["Praying Mantis"] = 2,
+			["Scarlet Macaw"] = 1,
+		},
+		LockPet_Weight = 5, -- if Weight >= 7 they will locked,
+		Instant_Sell = {
+				"Shiba Inu",
+
+		}
+	},
+
+	Webhook = {
+		UrlPet = "",
+		UrlSeed = "",
+		PcName = "NEKO-1",
+		
+		Noti = {
+			Seeds = {
+				"Sunflower",
+				"Dragon Pepper",
+				"Elephant Ears",
+				"Honeysuckle",
+				"Bone Blossom",
+				"Fossilight",
+				"Maple Apple",
+			},
+			SeedPack = {
+				"Idk"
+			},
+			Pets = {
+				"Disco Bee",
+				"Butterfly",
+				"Mimic Octopus",
+				"Queen Bee",
+				"Dragonfly",
+				"Raccoon",
+				"Red Fox",
+				"Fennec Fox",
+				"Bald Eagle",
+				"T-Rex",
+				"Brontosaurus",
+				"Spinosaurus",
+				"Dilophosaurus",
+				"Ankylosaurus",
+				"Kitsune",
+			},
+			Pet_Weight_Noti = true,
+		}
+	},
+}
+License = "CBXhpxdAil0kOpBTQjxlyvy11RYyxjwp"
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
