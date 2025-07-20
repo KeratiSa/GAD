@@ -139,8 +139,6 @@ getgenv().ConfigsKaitun = {
 			},
 			["Limit Upgrade"] = 3,
 			["Equip When Done"] = {
-				"Capybara",
-				"Ostrich",
 				"Starfish",
 				"Tanchozuru",
 			},
