@@ -122,7 +122,7 @@ getgenv().Configuration = {
     },
 
     EVENTSHOP = { -- กำหนดชื่อ Event ที่ต้องการทำ
-        { Name = "Zen Egg", Amount = 100 },
+        { Name = "Zen Egg", Amount = 10000 },
     },
 
     SELL_PET_MIN_COUNT = 1, -- จำนวน Pet ที่จะขายเมื่อมีมากกว่าหรือเท่ากับจำนวนนี้
