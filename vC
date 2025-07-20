@@ -105,6 +105,11 @@ getgenv().Configuration = {
                     "Pig",
                     "Rooster",
                     "Monkey",
+                    "Shiba Inu",
+                    "Tanuki",
+                    "Parasaurolophus",
+                    "Pachycephalosaurus",
+                    "Iguanodon",
     },
     PETTOUPGRADE = { -- กำหนดชื่อ Pet ที่ต้องการนำไปใช้ในการ Upgrade
                         "Starfish",
