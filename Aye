@@ -6,7 +6,7 @@ getgenv().ConfigsKaitun = {
 	
 	["Limit Tree"] = {
 		["Limit"] = 100,
-		["Destroy Untill"] = 80,
+		["Destroy Untill"] = 90,
 		["Safe Tree"] = {
 			"Moon Blossom",
 			"Bone Blossom",
@@ -15,54 +15,52 @@ getgenv().ConfigsKaitun = {
 		}
 	},
 
-	Seed = {
-		Buy = {
-			Mode = "Custom", -- Custom , Auto
-			Custom = {
-        		"Bamboo",
-        		"Carrot",
-       		 	"Orange Tulip",
-        		"Watermelon",
-        		"Pumpkin",
-        		"Daffodil",
-        		"Mushroom",
-			}
-		},
-		Place = {
-			Mode = "Select", -- Select , Lock
-			Select = {
-				        "Bamboo",
-        				"Carrot",
-        				"Orange Tulip",
-        				"Watermelon",
-        				"Pumpkin",
-        				"Daffodil",
-        				"Mushroom",
-			},
-			Lock = {
-				"Sunflower",
-				"Sugar Apple",
-				"Elephant Ears",
-				"Dragon Pepper",
-				"Burning Bud",
-				"Ember Lily",
-				"Beanstalk",
-				"Feijoa",
-				"Cacao",
-				"Pepper",
-				"Mushroom",
-				"Loquat",
-				"Fossilight",
-				"Maple Apple",
-				"Hinomai",
-				"Fossilight",
-				"Zen Rocks",
-				"Giant Pinecone",
-				"Grand Volcania",
-				"Bone Blossom"
-			}
-		}
-	},
+	Mode = "Auto", -- Custom , Auto
+Custom = {
+
+}
+},
+Place = {
+Mode = "Select", -- Select , Lock
+Select = {
+ "Cactus",
+"Pumpkin",
+"Watermelon",
+"Bamboo",
+"Mango",
+"Grape",
+"Pepper",
+"Apple",
+"Coconut",
+"Dragon Fruit",
+"Spiked Mango",
+"Taro Flower",
+"Dragon Sapling",
+},
+Lock = {
+"Sunflower",
+"Sugar Apple",
+"Elephant Ears",
+"Dragon Pepper",
+"Burning Bud",
+"Ember Lily",
+"Beanstalk",
+"Feijoa",
+"Cacao",
+"Pepper",
+"Mushroom",
+"Loquat",
+"Fossilight",
+"Maple Apple",
+"Hinomai",
+"Fossilight",
+"Zen Rocks",
+"Giant Pinecone",
+"Grand Volcania",
+"Bone Blossom"
+}
+}
+},
 	
 	["Seed Pack"] = {
 		Locked = {
