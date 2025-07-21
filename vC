@@ -1,12 +1,12 @@
 task.wait(10)
 getgenv().ConfigsKaitun = {
-	["Low Cpu"] = false,
+	["Low Cpu"] = true,
 
 	["Rejoin When Update"] = false,
 	
 	["Limit Tree"] = {
-		["Limit"] = 100,
-		["Destroy Untill"] = 80,
+		["Limit"] = 150,
+		["Destroy Untill"] = 140,
 		["Safe Tree"] = {
 			"Moon Blossom",
 			"Bone Blossom",
@@ -29,7 +29,7 @@ getgenv().ConfigsKaitun = {
 			}
 		},
 		Place = {
-			Mode = "Select", -- Select , Lock
+			Mode = "Lock", -- Select , Lock
 			Select = {
 				         "Cactus",
 					"Pumpkin",
@@ -46,26 +46,7 @@ getgenv().ConfigsKaitun = {
                     "Dragon Sapling",
 			},
 			Lock = {
-				"Sunflower",
-				"Sugar Apple",
-				"Elephant Ears",
-				"Dragon Pepper",
-				"Burning Bud",
-				"Ember Lily",
-				"Beanstalk",
-				"Feijoa",
-				"Cacao",
-				"Pepper",
-				"Mushroom",
-				"Loquat",
-				"Fossilight",
-				"Maple Apple",
-				"Hinomai",
-				"Fossilight",
-				"Zen Rocks",
-				"Giant Pinecone",
-				"Grand Volcania",
-				"Bone Blossom"
+
 			}
 		}
 	},
