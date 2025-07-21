@@ -31,8 +31,8 @@ getgenv().ConfigsKaitun = {
 		Place = {
 			Mode = "Lock", -- Select , Lock
 			Select = {
-				         "Cactus",
-					"Pumpkin",
+		"Cactus",
+		"Pumpkin",
                     "Watermelon",
                     "Bamboo",
                     "Mango",
@@ -73,7 +73,8 @@ getgenv().ConfigsKaitun = {
 			--"Koi",
 		}
 	},
-	
+		Restocks_limit = 5000000,
+		MinimumChi = 60
 	Gear = {
 		Buy = { 
 
