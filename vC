@@ -160,7 +160,7 @@ getgenv().ConfigsKaitun = {
 			["Scarlet Macaw"] = 1,
 			["Starfish"] = 1,
 		},
-		LockPet_Weight = 5, -- if Weight >= 7 they will locked,
+		LockPet_Weight = 7, -- if Weight >= 7 they will locked,
 		Instant_Sell = {
 				"Shiba Inu",
 
