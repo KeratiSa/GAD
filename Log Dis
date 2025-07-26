@@ -81,7 +81,7 @@ local function checkAndSend()
 
                         if weight >= 20 then
                             sendDiscordEmbed("⚠️ เจอสัตว์น้ำหนักมาก!", playerName, petType, weight, level)
-                        elseif (weight > 5 and level <= 10) or (weight > 10 and level <= 39) then
+                        elseif (weight > 6 and level <= 10) or (weight > 10 and level <= 25) then
                             sendDiscordEmbed("🐾 สัตว์เข้าเงื่อนไข", playerName, petType, weight, level)
                         end
                     end
