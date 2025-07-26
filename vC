@@ -7,8 +7,8 @@ getgenv().ConfigsKaitun = {
 	
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
-		["Limit"] = 120,
-		["Destroy Untill"] = 120,
+		["Limit"] = 100,
+		["Destroy Untill"] = 100,
 
 		["Safe Tree"] = {
 			"Moon Blossom",
@@ -94,7 +94,6 @@ getgenv().ConfigsKaitun = {
 		},
 		Shop = {
 			"Zen Egg",
-			"Raiju",
 		},
 	},
 
@@ -196,7 +195,7 @@ getgenv().ConfigsKaitun = {
 			"Red Fox",
 			"Blood Owl",
 			["Starfish"] = 5,
-            ["Capybara"] = 2,
+            		["Capybara"] = 2,
 		},
 		LockPet_Weight = 7, -- if Weight >= 10 they will locked,
 		Instant_Sell = {		
