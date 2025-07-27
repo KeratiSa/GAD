@@ -2,8 +2,8 @@ task.wait(10)
 getgenv().ConfigsKaitun = {
 	["Block Pet Gift"] = true,
 	
-	["Low Cpu"] = true,
-	["Auto Rejoin"] = true,
+	["Low Cpu"] = false,
+	["Auto Rejoin"] = false,
 	
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
