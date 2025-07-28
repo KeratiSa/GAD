@@ -1,14 +1,13 @@
-task.wait(10)
 getgenv().ConfigsKaitun = {
 	["Block Pet Gift"] = true,
-	
-	["Low Cpu"] = false,
-	["Auto Rejoin"] = false,
-	
+
+	["Low Cpu"] = true,
+	["Auto Rejoin"] = true,
+
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
 		["Limit"] = 100,
-		["Destroy Untill"] = 100,
+		["Destroy Untill"] = 90,
 
 		["Safe Tree"] = {
 			"Moon Blossom",
@@ -94,7 +93,16 @@ getgenv().ConfigsKaitun = {
 		},
 		Shop = {
 			"Zen Egg",
+			"Zen Seed Pack",
+			"Spiked Mango",
+			"Pet Shard Tranquil",
+			"Pet Shard Corrupted",
+			"Koi",
+			"Soft Sunshine",
+			"Sakura Bush",
+			"Raiju",
 		},
+		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
 
 	Gear = {
@@ -102,11 +110,7 @@ getgenv().ConfigsKaitun = {
 
 		},
 		Lock = {
-			"Master Sprinkler",
-			"Godly Sprinkler",
-			"Advanced Sprinkler",
-			"Basic Sprinkler",
-			"Lightning Rod",
+
 		},
 	},
 
@@ -123,6 +127,7 @@ getgenv().ConfigsKaitun = {
 			"Bee Egg",
 			"Rare Summer Egg",
 			"Mythical Egg",
+			"Common Summer Egg",
 		},
 		Buy = {
 			"Bee Egg",
@@ -133,6 +138,7 @@ getgenv().ConfigsKaitun = {
 			"Rare Summer Egg",
 			"Bug Egg",
 			"Mythical Egg",
+			"Common Summer Egg",
 		}
 	},
 
@@ -149,7 +155,7 @@ getgenv().ConfigsKaitun = {
 				["Koi"] = { 0, 70 },
 				["Tanuki"] = { 0, 70 },
 				["Tanchozuru"] = { 5, 70 },
-				["Kappa"] = { 1, 70 },
+				["Kappa"] = { 0, 70 },
 				["Kitsune"] = { 0, 70 },
 				["Dilophosaurus"] = { 0, 70 },
 				["Moon Cat"] = { 0, 70 },
@@ -195,7 +201,7 @@ getgenv().ConfigsKaitun = {
 			"Red Fox",
 			"Blood Owl",
 			["Starfish"] = 5,
-            		["Capybara"] = 2,
+            ["Capybara"] = 2,
 		},
 		LockPet_Weight = 6, -- if Weight >= 10 they will locked,
 		Instant_Sell = {		
