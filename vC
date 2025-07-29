@@ -209,7 +209,7 @@ getgenv().ConfigsKaitun = {
 			"Red Fox",
 			"Blood Owl",
 			["Starfish"] = 5,
-            ["Capybara"] = 2,
+            		["Capybara"] = 2,
 		},
 		LockPet_Weight = 6, -- if Weight >= 10 they will locked,
 		Instant_Sell = {		
@@ -239,9 +239,11 @@ getgenv().ConfigsKaitun = {
 				"Dragonfly",
 				"Raccoon",
 				"Fennec Fox",
+				"Kitsune",
+				"Corrupted Kitsune",
                 "Kitsune",
 			},
-			Pet_Weight_Noti = true,
+			Pet_Weight_Noti = flase,
 		}
 	},
 }
