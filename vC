@@ -24,23 +24,18 @@ getgenv().ConfigsKaitun = {
 
 	Seed = {
 		Buy = {
-			Mode = "Auto", -- Custom , Auto
+			Mode = "Custom", -- Custom , Auto
 			Custom = {
-				"Carrot",
-				"Bamboo",
+ 				"Carrot",
+ 				"Cactus",
 				"Pumpkin",
-				"Daffodil",
-				"Orange Tulip",
 				"Watermelon",
-				"Mushroom",
-				"Avocado",
-				"Feijoa",
-				"Cauliflower",
-				"Loquat",
-				"Green Apple",
-				"Nightshade",
-				"Firefly Fern",
-				"Soft Sunshine",
+				"Bamboo",
+				"Grape",
+				"Dragon Fruit",
+				"Spiked Mango",
+				"Taro Flower",
+				"Dragon Sapling",
 				"Zen Rocks",
 				"Hinomai",
 				"Beanstalk",
