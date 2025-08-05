@@ -1,6 +1,7 @@
 getgenv().ConfigsKaitun = {
-	["Block Pet Gift"] = true,
+	Beta_Fix_Data_Sync = true,
 
+	["Block Pet Gift"] = true,
 	Collect_Cooldown = 60, -- cooldown to collect fruit
 	JustFuckingCollectAll = false, -- Collect all (fruit not wait mutation)
 
@@ -9,8 +10,8 @@ getgenv().ConfigsKaitun = {
 
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
-		["Limit"] = 150,
-		["Destroy Untill"] = 149,
+		["Limit"] = 120,
+		["Destroy Untill"] = 120,
 
 		["Safe Tree"] = {
 			"Moon Blossom",
@@ -22,7 +23,7 @@ getgenv().ConfigsKaitun = {
 		Buy = {
 			Mode = "Custom", -- Custom , Auto
 			Custom = { -- any fruit u need to place
-				 				"Carrot",
+				 "Carrot",
  				"Cactus",
 				"Pumpkin",
 				"Watermelon",
@@ -70,24 +71,7 @@ getgenv().ConfigsKaitun = {
 
 	Events = {
 		["Cook Event"] = {
-			Minimum_Money = 1_000_000, -- minimum money to start play this event
-		},
-		["Zen Event"] = {
-			["Restocking"] = { -- Minimumthing to restock
-				Max_Restocks_Price = 20_000_000_000,
-				Minimum_Money = 5_000_000,
-				Minimum_Chi = 30
-			},
-			["Doing"] = {
-				Minimum_Money = 100_000, -- minimum money to start play this event
-				First_Upgrade_Tree = 7,
-				Maximum_Chi = 250,
-
-				-- // thing to skip doing
-				Skip_Fox = false, -- Skip The Middle Fox Trade (Corrupted Kitsune)
-				Skip_Corrupted_OldMan = false, -- Skip The OldMan Trade (Kodama)
-				-- If u need to skip Tranquill OldMan Set "First Upgrade Tree" To 0 and Max Chi To 99999
-			}
+			Minimum_Money = 30_000_000, -- minimum money to start play this event
 		},
 		["Traveling Shop"] = {
 			"Bee Egg",
@@ -99,7 +83,7 @@ getgenv().ConfigsKaitun = {
 		Shop = {
 			"Zen Egg",
 		},
-		Start_Do_Honey = 1_000_000 -- start trade fruit for honey at money
+		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
 
 	Gear = {
@@ -112,14 +96,12 @@ getgenv().ConfigsKaitun = {
 			"Advanced Sprinkler",
 			"Basic Sprinkler",
 			"Lightning Rod",
-			"Level Up Lollipop",
-			"Medium Treat",
-			"Medium Toy",
 		},
 	},
 
 	Eggs = {
 		Place = {
+			"Gourmet Egg",
 			"Zen Egg",
 			"Primal Egg",
 			"Dinosaur Egg",
@@ -132,7 +114,6 @@ getgenv().ConfigsKaitun = {
 			"Rare Summer Egg",
 			"Mythical Egg",
 			"Common Summer Egg",
-			"Gourmet Egg",
 		},
 		Buy = {
 			"Bee Egg",
@@ -155,34 +136,19 @@ getgenv().ConfigsKaitun = {
 			},
 			["Limit Upgrade"] = 2,
 			["Equip When Done"] = {
-				["Seal"] = { 1, 70, 1 }, -- 1 mean equip only 1 pet , 70 mean equip only level pet lower than 70 the one on the last mean first priority will ues first if possible 
-				["Starfish"] = { 1, 70 },
-				["Koi"] = { 0, 70 },
-				["Tanuki"] = { 0, 70 },
-				["Tanchozuru"] = { 5, 70 },
-				["Kappa"] = { 0, 70 },
-				["Kitsune"] = { 0, 70 },
-				["Dilophosaurus"] = { 0, 70 },
-				["Moon Cat"] = { 0, 70 },
-				["Capybara"] = { 0, 70 },
-				["Spinosaurus"] = { 0, 70 },
-				["Bear Bee"] = { 0, 70 },
-				["T-Rex"] = { 0, 70 },
-				["Brontosaurus"] = { 0, 70 },
-				["Disco Bee"] = { 0, 70 },
-				["Butterfly"] = { 0, 70 },
-				["Queen Bee"] = { 0, 70 },
-				["Dragonfly"] = { 0, 70 },
-				["Raccoon"] = { 0, 70 },
-				["Fennec Fox"] = { 0, 70 },
-				["Mimic Octopus"] = { 0, 70 },
-				["Red Fox"] = { 0, 70 },
-				["Blood Owl"] = { 1, 70 },
+				["Tanchozuru"] = { 5, 100, 1 }, -- 5 on the first mean equip only 5 | pet , 100 mean equip only level pet lower than 100 | the one on the last is priority it will ues first if possible 
+				["Ostrich"] = { 3, 100, 2 },
+				["Blood Kiwi"] = { 8, 100 },
+				["Seal"] = { 8, 100 },
+				["Rooster"] = { 8, 100 },
+				["Starfish"] = { 5, 75 },
 			},
 		},
 		Favorite_LockedPet = true,
-		Locked_Pet_Age = 60, -- pet that age > 60 will lock
+		Locked_Pet_Age = 50, -- pet that age > 60 will lock
 		Locked = {
+			"French Fry Ferret",
+			"Spaghetti Sloth",
 			"Corrupted Kitsune",
 			"Raiju",
 			"Koi",
@@ -206,11 +172,6 @@ getgenv().ConfigsKaitun = {
 			"Mimic Octopus",
 			"Red Fox",
 			"Blood Owl",
-			"Bagel Bunny",
-			"Pancake Mole",
-			"Sushi Bear",
-			"Spaghetti Sloth",
-			"French Fry Ferret",	
 			["Starfish"] = 10,
 		},
 		LockPet_Weight = 7, -- if Weight >= 10 they will locked
@@ -240,7 +201,7 @@ getgenv().ConfigsKaitun = {
 				"Fennec Fox",
 				"Kitsune",
 				"Corrupted Kitsune",
-                "Kitsune",
+                		"Kitsune",
 			},
 			Pet_Weight_Noti = false,
 		}
