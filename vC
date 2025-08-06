@@ -11,7 +11,7 @@ getgenv().ConfigsKaitun = {
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
 		["Limit"] = 120,
-		["Destroy Untill"] = 120,
+		["Destroy Untill"] = 80,
 
 		["Safe Tree"] = {
 			"Moon Blossom",
@@ -22,32 +22,66 @@ getgenv().ConfigsKaitun = {
 	Seed = {
 		Buy = {
 			Mode = "Custom", -- Custom , Auto
-			Custom = { -- any fruit u need to place
-				 "Carrot",
- 				"Cactus",
-				"Pumpkin",
-				"Watermelon",
-				"Bamboo",
-				"Grape",
-				"Dragon Fruit",
-				"Spiked Mango",
-				"Taro Flower",
-				"Dragon Sapling",
-				"Zen Rocks",
-				"Hinomai",
-				"Beanstalk",
-				"Ember Lily",
-				"Sunflower",
-				"Sugar Apple",
-				"Burning Bud",
-				"Giant Pinecone",
-				"Spiked Mango",
+			Custom = { -- any fruit u need to place		
+  "Carrot",
+  "Cactus",
+  "Pumpkin",
+  "Watermelon",
+  "Bamboo",
+  "Grape",
+  "Dragon Fruit",
+  "Spiked Mango",
+  "Taro Flower",
+  "Dragon Sapling",
+  "Zen Rocks",
+  "Hinomai",
+  "Beanstalk",
+  "Ember Lily",
+  "Sunflower",
+  "Sugar Apple",
+  "Burning Bud",
+  "Giant Pinecone",
+  "Corn",
+  "Prismatic Crop",
+  "Pepper",
+  "Banana",
+  "Tomato",
+  "Coconut",
+  "Elder Strawberry",
+  "Violet Corn",
+  "Grand Tomato"
 			}
 		},
 		Place = {
-			Mode = "Lock", -- Select , Lock
+			Mode = "Select", -- Select , Lock
 			Select = {
-				"Carrot"
+				  "Carrot",
+  "Cactus",
+  "Pumpkin",
+  "Watermelon",
+  "Bamboo",
+  "Grape",
+  "Dragon Fruit",
+  "Spiked Mango",
+  "Taro Flower",
+  "Dragon Sapling",
+  "Zen Rocks",
+  "Hinomai",
+  "Beanstalk",
+  "Ember Lily",
+  "Sunflower",
+  "Sugar Apple",
+  "Burning Bud",
+  "Giant Pinecone",
+  "Corn",
+  "Prismatic Crop",
+  "Pepper",
+  "Banana",
+  "Tomato",
+  "Coconut",
+  "Elder Strawberry",
+  "Violet Corn",
+  "Grand Tomato"
 			},
 			Lock = {
 				"Maple Apple",
