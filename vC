@@ -10,18 +10,31 @@ getgenv().ConfigsKaitun = {
 
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
-		["Limit"] = 120,
-		["Destroy Untill"] = 80,
+		["Limit"] = 100,
+		["Destroy Untill"] = 50,
 
 		["Safe Tree"] = {
-			"Moon Blossom",
-			"Fossilight",
+["Sugar Apple"] = 10,
+["Corn"] = 17,
+["Prismatic Crop"] = 10,
+["Pepper"] = 8,
+["Banana"] = 8,
+["Bamboo"] = 7,
+["Tomato"] = 6,
+["Coconut"] = 6,
+["Elder Strawberry"] = 5,
+["Ember Lily"] = 4,
+["Violet Corn"] = 3,
+["Pumpkin"] = 3,
+["Grand Tomato"] = 2,
+["Beanstalk"] = 5
+
 		}
 	},
 
 	Seed = {
 		Buy = {
-			Mode = "Custom", -- Custom , Auto
+			Mode = "Auto", -- Custom , Auto
 			Custom = { -- any fruit u need to place		
   "Carrot",
   "Cactus",
@@ -53,7 +66,7 @@ getgenv().ConfigsKaitun = {
 			}
 		},
 		Place = {
-			Mode = "Select", -- Select , Lock
+			Mode = "Lock", -- Select , Lock
 			Select = {
 				  "Carrot",
   "Cactus",
@@ -84,15 +97,7 @@ getgenv().ConfigsKaitun = {
   "Grand Tomato"
 			},
 			Lock = {
-				"Maple Apple",
-				"Sunflower",
-				"Dragon Pepper",
-				"Elephant Ears",
-				"Moon Melon",
-				"Easter Egg",
-				"Moon Mango",
-				"Bone Blossom",
-				"Fossilight",
+
 			}
 		}
 	},
