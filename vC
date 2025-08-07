@@ -1,7 +1,6 @@
 getgenv().ConfigsKaitun = {
-	Beta_Fix_Data_Sync = true,
+	["Block Pet Gift"] = false,
 
-	["Block Pet Gift"] = true,
 	Collect_Cooldown = 60, -- cooldown to collect fruit
 	JustFuckingCollectAll = false, -- Collect all (fruit not wait mutation)
 
@@ -10,10 +9,17 @@ getgenv().ConfigsKaitun = {
 
 	["Rejoin When Update"] = false,
 	["Limit Tree"] = {
-		["Limit"] = 100,
-		["Destroy Untill"] = 50,
+		["Limit"] = 150,
+		["Destroy Untill"] = 100,
 
 		["Safe Tree"] = {
+			"Moon Blossom",
+			"Fossilight",
+
+			-- locked fruit for zen event
+			["Tomato"] = 5,
+["Strawberry"] = 5, 
+["Blueberry"] = 5,
 ["Sugar Apple"] = 10,
 ["Corn"] = 17,
 ["Prismatic Crop"] = 10,
@@ -28,76 +34,75 @@ getgenv().ConfigsKaitun = {
 ["Pumpkin"] = 3,
 ["Grand Tomato"] = 2,
 ["Beanstalk"] = 5
-
 		}
 	},
 
 	Seed = {
 		Buy = {
 			Mode = "Auto", -- Custom , Auto
-			Custom = { -- any fruit u need to place		
-  "Carrot",
-  "Cactus",
-  "Pumpkin",
-  "Watermelon",
-  "Bamboo",
-  "Grape",
-  "Dragon Fruit",
-  "Spiked Mango",
-  "Taro Flower",
-  "Dragon Sapling",
-  "Zen Rocks",
-  "Hinomai",
-  "Beanstalk",
-  "Ember Lily",
-  "Sunflower",
-  "Sugar Apple",
-  "Burning Bud",
-  "Giant Pinecone",
-  "Corn",
-  "Prismatic Crop",
-  "Pepper",
-  "Banana",
-  "Tomato",
-  "Coconut",
-  "Elder Strawberry",
-  "Violet Corn",
-  "Grand Tomato"
+			Custom = { -- any fruit u need to place
+				"Carrot",
 			}
 		},
 		Place = {
-			Mode = "Lock", -- Select , Lock
+			Mode = "Select", -- Select , Lock
 			Select = {
-				  "Carrot",
-  "Cactus",
-  "Pumpkin",
-  "Watermelon",
-  "Bamboo",
-  "Grape",
-  "Dragon Fruit",
-  "Spiked Mango",
-  "Taro Flower",
-  "Dragon Sapling",
-  "Zen Rocks",
-  "Hinomai",
-  "Beanstalk",
-  "Ember Lily",
-  "Sunflower",
-  "Sugar Apple",
-  "Burning Bud",
-  "Giant Pinecone",
-  "Corn",
-  "Prismatic Crop",
-  "Pepper",
-  "Banana",
-  "Tomato",
-  "Coconut",
-  "Elder Strawberry",
-  "Violet Corn",
-  "Grand Tomato"
+				"Carrot",
+				"Blueberry",
+ 				"Tomato",
+ 				"Strawberry",
+ 				"Corn",
+ 				"Apple",
+ 				"Coconut",
+ 				"Watermelon",
+ 				"Cactus",
+ 				"Dragon Fruit",
+				"Mango",
+				"Mushroom",
+				"Grape",
+				"Pepper",
+				"Cacao",
+				"Bamboo",
+				"Pumpkin",
+				"Daffodil",
+				"Orange Tulip",
+				"Watermelon",
+				"Mushroom",
+				"Avocado",
+				"Feijoa",
+				"Cauliflower",
+				"Loquat",
+				"Green Apple",
+				"Nightshade",
+				"Firefly Fern",
+				"Soft Sunshine",
+				"Zen Rocks",
+				"Hinomai",
+				"Beanstalk",
+				"Sugar Apple",
+				"Spiked Mango",
 			},
 			Lock = {
-
+				"Sunflower",
+				"Sugar Apple",
+				"Elephant Ears",
+				"Dragon Pepper",
+				"Burning Bud",
+				"Ember Lily",
+				"Beanstalk",
+				"Feijoa",
+				"Cacao",
+				"Pepper",
+				"Mushroom",
+				"Loquat",
+				"Fossilight",
+				"Maple Apple",
+				"Elder Strawberry",
+				"Fossilight",
+				"Zen Rocks",
+				"Giant Pinecone",
+				"Grand Volcania",
+				"Bone Blossom"
 			}
 		}
 	},
@@ -108,9 +113,9 @@ getgenv().ConfigsKaitun = {
 		}
 	},
 
-	Events = {
+		Events = {
 		["Cook Event"] = {
-			Minimum_Money = 30_000_000, -- minimum money to start play this event
+			Minimum_Money = 1_000_000, -- minimum money to start play this event
 		},
 		["Traveling Shop"] = {
 			"Bee Egg",
@@ -127,7 +132,17 @@ getgenv().ConfigsKaitun = {
 
 	Gear = {
 		Buy = { 
-
+			"Master Sprinkler",
+			"Godly Sprinkler",
+			"Advanced Sprinkler",
+			"Basic Sprinkler",
+			"Lightning Rod",
+			"Level Up Lollipop",
+			"Medium Treat",
+			"Medium Toy",
+			"Grandmaster Sprinkler",
+			"Small Toy",
+			"Small Treat",
 		},
 		Lock = {
 			"Master Sprinkler",
@@ -135,6 +150,13 @@ getgenv().ConfigsKaitun = {
 			"Advanced Sprinkler",
 			"Basic Sprinkler",
 			"Lightning Rod",
+			"Level Up Lollipop",
+			"Medium Treat",
+			"Medium Toy",
+			"Grandmaster Sprinkler",
+			"Small Toy",
+			"Small Treat",
+			"Reclaimer",		
 		},
 	},
 
@@ -149,19 +171,25 @@ getgenv().ConfigsKaitun = {
 			"Night Egg",
 			"Bug Egg",
 			"Paradise Egg",
-			"Bee Egg",
 			"Rare Summer Egg",
+			"Common Egg",
+			"Bee Egg",
 			"Mythical Egg",
 			"Common Summer Egg",
 		},
 		Buy = {
-			"Bee Egg",
+			"Gourmet Egg",
+			"Zen Egg",
+			"Primal Egg",
+			"Dinosaur Egg",
 			"Oasis Egg",
-			"Paradise Egg",
 			"Anti Bee Egg",
 			"Night Egg",
-			"Rare Summer Egg",
 			"Bug Egg",
+			"Paradise Egg",
+			"Rare Summer Egg",
+			"Common Egg",
+			"Bee Egg",
 			"Mythical Egg",
 			"Common Summer Egg",
 		}
@@ -172,8 +200,14 @@ getgenv().ConfigsKaitun = {
 		["Upgrade Slot"] = {
 			["Pet"] = {
 				["Starfish"] = { 5, 100, 1, true }, -- the "true" on the last is auto equip (use for like only need to use for upgrade pet)
+				["Nihonzaru"] = { 2, 100, 1, true },
+				["Tanuki"] = { 2, 100, 1, true },
+				["Squirrel"] = { 2, 100, 1, true },
+				["Bagel Bunny"] = { 2, 100, 1, true },
+				["Pancake Mole"] = { 2, 100, 1, true },
+				["Sushi Bear"] = { 2, 100, 1, true },
 			},
-			["Limit Upgrade"] = 2,
+			["Limit Upgrade"] = 5,
 			["Equip When Done"] = {
 				["Tanchozuru"] = { 5, 100, 1 }, -- 5 on the first mean equip only 5 | pet , 100 mean equip only level pet lower than 100 | the one on the last is priority it will ues first if possible 
 				["Ostrich"] = { 3, 100, 2 },
@@ -183,8 +217,8 @@ getgenv().ConfigsKaitun = {
 				["Starfish"] = { 5, 75 },
 			},
 		},
-		Favorite_LockedPet = true,
-		Locked_Pet_Age = 50, -- pet that age > 60 will lock
+		Favorite_LockedPet = false,
+		Locked_Pet_Age = 60, -- pet that age > 60 will lock
 		Locked = {
 			"French Fry Ferret",
 			"Spaghetti Sloth",
