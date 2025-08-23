@@ -16,8 +16,7 @@ getgenv().ConfigsKaitun = {
 			["Elder Strawberry"] =2,
 			["Ember Lily"] = 2,
 			["Grand Tomato"] = 2,
-			["Beanstalk"] = 2
-					-- for the event
+			["Beanstalk"] = 2,
             ["Blueberry"] = 5,
             ["Strawberry"] = 5,
             ["Apple"] = 4,
