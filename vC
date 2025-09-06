@@ -1,51 +1,77 @@
 getgenv().ConfigsKaitun = {
 	Beta_Fix_Data_Sync = true,
+
 	NoDeletePlayer = false,
-	["Block Pet Gift"] = true,
-	Collect_Cooldown = 120, -- cooldown to collect fruit
+
+	["Block Pet Gift"] = false,
+
+	Collect_Cooldown = 60, -- cooldown to collect fruit
+
 	["Low Cpu"] = true,
-	["Auto Rejoin"] = false,
+	["Auto Rejoin"] = true,
+
 	["Rejoin When Update"] = false,
-	["Limit Tree"] = {
-		["Limit"] = 120,
-		["Destroy Until"] = 80,
-		["Safe Tree"] = {
-			"Moon Blossom",
-			"Fossilight",
-			Bamboo = 2,
-			Coconut = 2,
-			Mushroom = 2,
-			Glowthorn = 2,
-			Tomato = 2,
-			Pumpkin = 2,
-			Pepper = 2,
-			Cacao = 2,
-			Apple = 2,
-			Romanesco = 2,
-			["Elder Strawberry"] = 2,
-			["Burning Bud"] = 2,
-			["Giant Pinecone"] = 2,
-			Corn = 2,
-			["Sugar Apple"] = 2,
-			["Ember Lily"] = 2,
-			["Dragon Fruit"] = 2,
-			Sunbulb = 2,
-			["Orange Tulip"] = 2,
-			Blueberry = 2,
-			Watermelon = 2,
-			Mango = 2,
-			Cactus = 2,
-			Strawberry = 2,
-			Beanstalk = 2,
-			Lightshoot = 2,
-			Grape = 2,
-			Daffodil = 2,
+
+	["Auto Trade Pet"] = { -- not done yet bro dont use
+		["Enabled"] = false, 
+		["Target"] =  { -- multi users
+			"username1",
+			"username2",
+		},
+		["Pet To Send"] = {
+			
 		}
 	},
+
+	["Limit Tree"] = {
+		["Limit"] = 200,
+		["Destroy Until"] = 180,
+
+		["Safe Tree"] = {
+			"Moon Blossom",
+			"Bone Blossom",
+			"Moon Melon",
+			"Maple Apple",
+			"Moon Mango",
+			"Dragon Pepper",
+			"Elephant Ears",
+			"Fossilight",
+			"Princess Thorn",
+			Bamboo = 4,
+			Coconut = 4,
+			Mushroom = 4,
+			Glowthorn = 4,
+			Tomato = 4,
+			Pumpkin = 4,
+			Pepper = 4,
+			Cacao = 4,
+			Apple = 4,
+			Romanesco = 4,
+			["Elder Strawberry"] = 4,
+			["Burning Bud"] = 4,
+			["Giant Pinecone"] = 4,
+			Corn = 4,
+			["Sugar Apple"] = 4,
+			["Ember Lily"] = 4,
+			["Dragon Fruit"] = 4,
+			Sunbulb = 8,
+			["Orange Tulip"] = 4,
+			Blueberry = 4,
+			Watermelon = 4,
+			Mango = 4,
+			Cactus = 4,
+			Strawberry = 4,
+			Beanstalk = 4,
+			Lightshoot = 4,
+			Grape = 4,
+			Daffodil = 4,
+		}
+	},
+
 	Seed = {
 		Buy = {
 			Mode = "Auto", -- Custom , Auto
-			Custom = { -- any fruit u need to place
+			Custom = { -- any seed u need to buy
 				"Carrot",
 			}
 		},
@@ -67,6 +93,7 @@ getgenv().ConfigsKaitun = {
 			}
 		}
 	},
+
 	["Seed Pack"] = {
 		Locked = {
 
@@ -76,9 +103,11 @@ getgenv().ConfigsKaitun = {
 	Events = {
 		["Fairy Event"] = {
 			Minimum_Money = 1_000_000, -- minimum money to start play this event
-			Rewards_Item = {
-				"FairyPoints",
+			Rewards_Item = { -- top mean select first
+				"Pet Shard Glimmering",
 				"Enchanted Egg",
+				"FairyPoints",
+				"Fairy Targeter",
 				"Enchanted Seed Pack",
 			},
 			Upgrade = {
@@ -90,43 +119,55 @@ getgenv().ConfigsKaitun = {
 					"Fairy Event Duration",
 				},
 				Limit = {
-					["Glimmer Multiplier"] = 5, -- max 10
-					["Loose Fairy Spawn Amount"] = 4, -- max 4
-					["Fairy Event Duration"] = 5, -- max 10
+					["Glimmer Multiplier"] = 10, -- max 10
+					["Loose Fairy Spawn Amount"] = 10, -- max 10
+					["Fairy Event Duration"] = 10, -- max 10
 					["Fairy Spawn Amount"] = 9, -- max 9
 				}
 			}
 		},
-		MaxMoney_Restocks = 1_000_000,
+		MaxMoney_Restocks = 50_000_000,
 		Shop = { -- un comment to buy
+			"Enchanted Chest",
+			"Pet Shard Glimmering",
+			"Enchanted Egg",
+
+			"Sprout Seed Pack",
 			"Sprout Egg",
+			["Spriggan"] = 8,
+			"Skyroot Chest",
 		},
 		["Traveling Shop"] = {
 			"Bee Egg",
+			"Paradise Egg", 
+			"Rare Summer Egg", 
+			"Common Summer Egg"
 		},
 		Craft = {
+			"Enchanted Chest",
+			"Fairy Net",
+			"Enchanted Egg",
+			"Enchanted Seed Pack",
 			"Anti Bee Egg",
 			"Pet Shard GiantBean",
 			"Sprout Egg",
 		},
 		Start_Do_Honey = 2_000_000 -- start trade fruit for honey at money
 	},
+
 	Gear = {
 		Buy = { 
 
 		},
 		Lock = {
- 			"Master Sprinkler",
- 			"Godly Sprinkler",
- 			"Advanced Sprinkler",
- 			"Basic Sprinkler",
- 			"Lightning Rod",
- 			"Level Up Lollipop",
- 			"Medium Treat",
- 			"Medium Toy",
- 			"Grandmaster Sprinkler",
+			"Master Sprinkler",
+			"Godly Sprinkler",
+			"Advanced Sprinkler",
+			"Basic Sprinkler",
+			"Lightning Rod",
 		},
 	},
+
 	Eggs = {
 		Place = {
 			"Enchanted Egg",
@@ -143,48 +184,50 @@ getgenv().ConfigsKaitun = {
 			"Bee Egg",
 			"Rare Summer Egg",
 			"Mythical Egg",
-			"Rare Egg",
-			"Legendary Egg",
-
+			"Uncommon Egg",
 		},
 		Buy = {
-			"Enchanted Egg",
-			"Sprout Egg",
-			"Gourmet Egg",
-			"Zen Egg",
-			"Primal Egg",
-			"Dinosaur Egg",
+			"Bee Egg",
 			"Oasis Egg",
+			"Paradise Egg",
 			"Anti Bee Egg",
 			"Night Egg",
-			"Bug Egg",
-			"Paradise Egg",
-			"Bee Egg",
 			"Rare Summer Egg",
+			"Bug Egg",
 			"Mythical Egg",
-			"Rare Egg",
-			"Legendary Egg",
+			"Uncommon Egg",
+			"Common Egg",
 		}
 	},
 
 	Pets = {
+		["Auto Feed"] = true,
+
+		MutationPet = {
+			["PET NAME"] = { "Glimmering","... any other" }
+		},
+
 		["Start Delete Pet At"] = 40,
 		["Upgrade Slot"] = {
+			["Little Auto Equip"] = true, 
 			["Pet"] = {
-				["Starfish"] = { 4, 100, 1, true },
+				["Starfish"] = { 5, 100, 1, true }, 
 			},
-			["Limit Upgrade"] = 5,
+			["Limit Upgrade"] = 2, 
 			["Equip When Done"] = {
 				["Glimmering Sprite"] = {8, 100, 1},
-				["Rooster"] = { 1, 100 },
+				["Tanchozuru"] = { 5, 100, 2 }, 
+				["Seal"] = { 8, 100 },
+				["Rooster"] = { 8, 100 },
 			},
 		},
-		Favorite_LockedPet = false,
+		Unfavorite_AllPet = false,
+		Favorite_LockedPet = true,
 		Locked_Pet_Age = 60, -- pet that age > 60 will lock
 		Locked = {
+			"Phoenix",
 			"Cockatrice",
 			"Griffin",
-			"Junkbot",
 			"Golden Goose",
 			"Golem",
 			"French Fry Ferret",
@@ -212,18 +255,17 @@ getgenv().ConfigsKaitun = {
 			"Mimic Octopus",
 			"Red Fox",
 			"Blood Owl",
-			["Starfish"] = 5,
+			["Starfish"] = 10,
 		},
 		LockPet_Weight = 5, -- if Weight >= 10 they will locked
 		Ignore_Pet_Weight = {
-		"NAME oF PET THAT U DONT NEED LOCK",
+			"NAME oF PET THAT U DONT NEED LOCK",
 		},
 		Instant_Sell = {
-			"Monkey",
-			"Pig",
-			"Spotted Deer",
+			"NAME oF SOMETHING",
 		}
 	},
+
 	Webhook = {
 		UrlPet = "https://discord.com/api/webhooks/1246251632451129505/GZvBOdabxbViDhW8CzYZ4-pnpA0W0Cj1kjlGlfpW9F1UcrZkwgF6XPrqSfCvCBMe0rsJ",
 		UrlSeed = "https://discord.com/api/webhooks/1246252717307854898/PfAKgIKwTYmUXeeh_wWbfxL1reE4PmIBZ7mabKxOgiPMpz93ZwGPmoE96kwFgJ1A96M6",
