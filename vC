@@ -118,6 +118,7 @@ getgenv().ConfigsKaitun = {
 					"Loose Fairy Spawn Amount",
 					"Glimmer Multiplier",
 					"Fairy Event Duration",
+					"Enchanted Seed Pack",
 				},
 				Limit = {
 					["Glimmer Multiplier"] = 10, -- max 10
@@ -132,7 +133,7 @@ getgenv().ConfigsKaitun = {
 			"Enchanted Chest",
 			"Pet Shard Glimmering",
 			"Enchanted Egg",
-
+			"Enchanted Seed Pack",
 			"Sprout Seed Pack",
 			"Sprout Egg",
 			["Spriggan"] = 8,
